@@ -8,53 +8,68 @@
 body {
     font-family: Arial, sans-serif;
     background-size: cover;
+    background-color: #f5f5f5; /* Added a fallback background color */
     color: #25292c;
     line-height: 1.6;
 }
 
 /* Navigation Bar */
-nav{
+nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between; /* Adjusted for better alignment */
     align-items: center;
     height: 45px;
     background-color: #fbff00;
+    padding: 0 20px; /* Added padding for spacing */
 }
 
-nav ul{
+nav ul {
     display: flex;
     justify-content: center;
+    list-style: none; /* Ensure consistent list styling */
 }
 
-nav ul li{
-    list-style: none;
-    margin: 0 25px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;;
+nav ul li {
+    margin: 0 15px; /* Adjusted margin for better spacing */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.left{
-    font-size: 32px;
+nav ul li a {
+    text-decoration: none; /* Added for cleaner links */
+    color: #000000;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.left {
+    font-size: 28px; /* Slightly reduced size for better balance */
     font-family: 'Times New Roman', Times, serif;
 }
 
 /* Container */
 .container {
-    background: rgba(255, 235, 120, 0.521);
+    background: rgba(255, 235, 120, 0.6); /* Adjusted opacity for better readability */
     padding: 20px;
     border-radius: 10px;
     max-width: 420px;
     margin: 90px auto;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Softer shadow */
     text-align: center;
     color: #000000;
 }
 
 .container h2 {
     margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .container p {
     font-size: 14px;
+    margin-bottom: 20px; /* Added spacing for better layout */
 }
 
 /* Form Elements */
@@ -62,6 +77,7 @@ form label {
     display: block;
     text-align: left;
     margin: 10px 0 5px;
+    font-weight: bold; /* Added for emphasis */
 }
 
 form input {
@@ -71,11 +87,13 @@ form input {
     border: 1px solid #ddd;
     border-radius: 5px;
     background: #f9f9f9;
+    font-size: 14px;
 }
 
 form input:focus {
     border-color: #5cb85c;
     outline: none;
+    background-color: #fff; /* Added slight highlight for focus */
 }
 
 button {
@@ -91,7 +109,7 @@ button {
 }
 
 button:hover {
-    background-color: #fbff00;
+    background-color: #f9e000; /* Slightly darker shade on hover */
 }
 
 /* Form Links */
@@ -111,13 +129,20 @@ button:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .navbar {
+    nav {
         flex-direction: column;
         align-items: flex-start;
+        padding: 10px; /* Adjust padding for smaller screens */
     }
 
-    .navbar a {
-        margin: 5px 0;
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Adjust margin for stacked items */
     }
 
     .container {
