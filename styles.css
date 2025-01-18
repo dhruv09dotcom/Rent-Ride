@@ -6,20 +6,32 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "poppins", serif;
     background-size: cover;
-    background-color: #f5f5f5; /* Added a fallback background color */
+    background-color: #fffec5; /* Added a fallback background color */
     color: #25292c;
     line-height: 1.6;
 }
 
+/*.poppins-regular {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .poppins-semibold {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-style: normal;
+  }*/
+  
 /* Navigation Bar */
 nav {
     display: flex;
     justify-content: space-between; /* Adjusted for better alignment */
     align-items: center;
     height: 45px;
-    background-color: #fbff00;
+    background-color: #f9e000;
     padding: 0 20px; /* Added padding for spacing */
 }
 
@@ -31,22 +43,32 @@ nav ul {
 
 nav ul li {
     margin: 0 15px; /* Adjusted margin for better spacing */
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 nav ul li a {
-    text-decoration: none; /* Added for cleaner links */
+    text-decoration: none; /* Remove underline */
     color: #000000;
     font-size: 16px;
+    padding: 5px 10px; /* Add padding for box hover effect */
+    border-radius: 5px; /* Add rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    background-color: #fffec5; /* Background color on hover */
+    color: #000; /* Text color on hover */
+    font-weight: bold;
 }
+
 
 .left {
     font-size: 28px; /* Slightly reduced size for better balance */
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "poppins", serif;
+    font-weight: 600;
+    font-style: normal;
 }
 
 /* Container */
@@ -80,7 +102,8 @@ form label {
     font-weight: bold; /* Added for emphasis */
 }
 
-form input {
+form input,
+form textarea {
     width: 100%;
     padding: 10px;
     margin: 10px 0 15px;
@@ -90,8 +113,9 @@ form input {
     font-size: 14px;
 }
 
-form input:focus {
-    border-color: #5cb85c;
+form input:focus,
+form textarea:focus {
+    border-color: #000;
     outline: none;
     background-color: #fff; /* Added slight highlight for focus */
 }
@@ -109,7 +133,8 @@ button {
 }
 
 button:hover {
-    background-color: #f9e000; /* Slightly darker shade on hover */
+    background-color: #f9e000;
+    font-weight: bold; /* Slightly darker shade on hover */
 }
 
 /* Form Links */
@@ -125,6 +150,7 @@ button:hover {
 
 .form-links a:hover {
     text-decoration: underline;
+    font-weight: bold;
 }
 
 /* Responsive Design */
