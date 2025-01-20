@@ -73,7 +73,7 @@ nav ul li a:hover {
 
 /* Container */
 .container {
-    background: rgba(255, 235, 120, 0.6); /* Adjusted opacity for better readability */
+    background: rgba(252, 247, 221, 0.6); /* Adjusted opacity for better readability */
     padding: 20px;
     border-radius: 10px;
     max-width: 420px;
@@ -124,8 +124,8 @@ button {
     width: 100%;
     padding: 10px;
     border: none;
-    background-color: #fbff00;
-    color: #000000;
+    background-color: #4b4b4b;
+    color: #ffffff;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
@@ -133,7 +133,7 @@ button {
 }
 
 button:hover {
-    background-color: #f9e000;
+    /*background-color: #f9e000;*/
     font-weight: bold; /* Slightly darker shade on hover */
 }
 
