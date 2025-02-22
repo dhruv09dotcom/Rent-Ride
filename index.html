@@ -3,28 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Rental System</title>
+    <meta name="description" content="Rent Ride: Your trusted car rental service. Explore our wide range of vehicles for rent at affordable prices.">
+    <title>Car Rental System | Rent Ride</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Image/Rent Ride.png" class="logo-img">
+                </a>
+            </div>
+            <div class="contact-info">
+                <div class="circle_icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                <p>For Support Mail us: <br> <span><a href="mailto:support@rentride.com">support@rentride.com</a></span></p>
+                <div class="circle_icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                <p>Service Helpline: <br> <span><a href="tel:+919876543210">+91 98765 43210</a></span></p>
+            </div>
+            <div class="btn-login">
+                <a href="login.html">Login/Register</a>
+            </div>
+        </div>
+    </header>
+
     <!-- Navigation Bar -->
-    <nav>
-        <div class="left">Rent Ride</div>
-        <div class="right">
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="login.html">login</a></li>
-                <li><a href="register.html">Sign up</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+    <nav aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="left">Rent Ride</div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="car-listing.html">Explore Cars</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
-    <!-- Content Section -->
-    <div class="content">
-        <h2><marquee direction="left" behavior="slow">Welcome To The Rent Ride - Car Rental System</marquee></h2>
+
+    <!-- Banner Section (Background Image) -->
+    <div class="bg-container">
+        <img src="Image\hero-banner.jpg" alt="Car Rental Background" class="bg-img">
     </div>
+
+    <!-- Welcome Section -->
+     <main>
+        <section>
+            <div class="Word">
+                <h2>Welcome to Rent Ride
+                    <span> Your Trusted Car Rental Service </span>
+                </h2>
+            </div>
+        </section>
+     </main>
+    <!-- Paragraph Section -->
+    <main>
+        <section class="paragraph">
+            <div class="content-box">
+                <!-- Heading -->
+                <h2>Find the Best <span>Car For You</span></h2>
+
+                <!-- Paragraph -->
+                <p>
+                    Looking for a hassle-free and affordable car rental? <span>Rent Ride</span> has got you covered!  
+                    We offer a diverse fleet of Petrol, Diesel, CNG, and Electric cars to suit your travel needs.  
+                    Whether you're planning a weekend getaway, a business trip, or a daily commute,  
+                    we provide well-maintained vehicles at unbeatable prices.  
+                    Enjoy a smooth booking process, flexible rental plans, and top-notch customer support.  
+                    Choose <span>Rent Ride</span> today and experience the freedom of driving your way! 🚗💨
+                </p>
+
+                <!-- Button -->
+                <a href="car-listing.html" class="btn-primary">Book Now</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Featured Cars Section -->
+    <main class="car-listings">
+        <h2>Featured Cars</h2>
+        <section class="car-grid">
+            <article class="car-item">
+                <div class="car-image">
+                    <img src="Image/car-1.jpg" alt="Maruti Suzuki Wagon R">
+                </div>
+                <div class="car-info">
+                    <div class="car-meta">
+                        <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                        <span><i class="fas fa-calendar"></i> 2019 Model</span>
+                        <span><i class="fas fa-users"></i> 5 seats</span>
+                    </div>
+                    <h3>Maruti Suzuki Wagon R</h3>
+                    <p class="price">$500 /Day</p>
+                    <p class="desc">Latest Updates: Maruti Suzuki has launched the BS6 Wa...</p>
+                </div>
+            </article>
+            <article class="car-item">
+                <div class="car-image">
+                    <img src="Image/car-2.jpg" alt="BMW 5 Series">
+                </div>
+                <div class="car-info">
+                    <div class="car-meta">
+                        <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                        <span><i class="fas fa-calendar"></i> 2018 Model</span>
+                        <span><i class="fas fa-users"></i> 5 seats</span>
+                    </div>
+                    <h3>BMW 5 Series</h3>
+                    <p class="price">$1000 /Day</p>
+                    <p class="desc">BMW 5 Series price starts at ₹55.4 Lakh...</p>
+                </div>
+            </article>
+            <!-- More car listings here -->
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@rentride.com">info@rentride.com</a></p>
+                <p>Phone: <a href="tel:+121565565556">+121 56556 565556</a></p>
+                <p>Address: Your Address 123 street</p>
+            </div>
+            <div class="footer-content">
+                <h3>Quick Links</h3>
+                <ul class="footer-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="car-listing.html">Cars</a></li>
+                    <li><a href="contact-us.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-content">
+                <h3>Follow Us</h3>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <p>&copy; 2025 Rent Ride. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

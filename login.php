@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row['password'])) {
-            header("Location: dashboard.html"); // Replace with your dashboard or home page
+            header("Location: index.html"); // Replace with your dashboard or home page
             exit();
         } else {
             echo "Invalid password.";

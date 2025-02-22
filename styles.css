@@ -1,178 +1,562 @@
-/* General Reset */
-* {
+/*---------- General Styles ----------*/
+body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #f8f9fa;
 }
 
-body {
-    font-family: "poppins", serif;
-    background-size: cover;
-    background-color: #4b4b4b; /* Added a fallback background color */
-    color: #fff;
-    line-height: 1.6;
+/*---------- Header ----------*/
+header {
+    background: #fff; /* Unified background color */
+    color: #000; /* Unified text color */
+    padding: 10px 0;
 }
-
-/*.poppins-regular {
-    font-family: "Poppins", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .poppins-semibold {
-    font-family: "Poppins", serif;
-    font-weight: 600;
-    font-style: normal;
-  }*/
-  
-/* Navigation Bar */
-nav {
+.header-container {
     display: flex;
-    justify-content: space-between; /* Adjusted for better alignment */
+    justify-content: space-between;
     align-items: center;
-    height: 45px;
-    /*background-color: #fbff00;*/
-    padding: 0 20px; /* Added padding for spacing */
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
 }
-
-nav ul {
+.logo-img {
+    height: 50px;
+}
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.contact-info p {
+    font-weight: 400;
+    margin: 0;
+}
+.contact-info p span{
+    font-weight: 700;
+    margin: 0;
+}
+.circle_icon {
+    color: #000;
+    width: 30px;
+    height: 30px;
     display: flex;
     justify-content: center;
-    list-style: none; /* Ensure consistent list styling */
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 50%;
 }
-
-nav ul li {
-    margin: 0 15px; /* Adjusted margin for better spacing */
-    font-family: "Poppins", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-nav ul li a {
-    text-decoration: none; /* Remove underline */
+.btn-login a {
+    background: #ff0011;
     color: #fff;
-    font-size: 16px;
-    padding: 5px 10px; /* Add padding for box hover effect */
-    border-radius: 5px; /* Add rounded corners */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+.btn-login a:hover {
+    background: #970c16;
 }
 
-nav ul li a:hover {
-    color: #ff0000; /* Text color on hover */
-    font-weight: bold;
+/*---------- Navigation Bar ----------*/
+nav {
+    background: #0F172A;
+    padding: 10px 0;
 }
 
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
 
 .left {
-    font-size: 28px; /* Slightly reduced size for better balance */
-    font-family: "poppins", serif;
+    font-size: 24px;
+    color: #fff;
     font-weight: 600;
-    font-style: normal;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-container ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-container ul li {
+    position: relative;
+}
+
+/* Navigation links */
+.nav-container ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 15px;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+/* Add center-aligned hover underline */
+.nav-container ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px; /* Adjust to control distance from text */
+    width: 0;
+    height: 3px;
+    background-color: #ff9900;
+    transition: width 0.3s ease, left 0.3s ease;
+    transform: translateX(-50%);
+}
+
+/* Hover effect: Expands line from center */
+.nav-container ul li a:hover::after {
+    width: 100%;
+    left: 50%;
+}
+
+/*---------- Banner Section (Background Image) ----------*/
+.bg-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+/* Background Image */
+.bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2; /* Push background further back */
+}
+
+/* Black Tint and Blur Effect */
+.bg-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Black tint with 50% opacity */
+    backdrop-filter: blur(2px); /* Blur effect */
+    z-index: -1; /* Keeps it behind the content */
+}
+
+/*---------- Welcome Section ----------*/
+/* Content */
+.Word {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #000;
+    padding: 10px 20px;
+}
+
+.Word h2 {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.Word h2 span{
+    font-weight: 400;
+}
+
+/*---------- Paragraph Section ----------*/
+.paragraph {
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    text-align: center;
+    flex-direction: column; /* Align elements in a column */
+}
+
+/* Centered Content Box */
+.content-box {
+    max-width: 1000px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers items horizontally */
+}
+
+/* Heading */
+.content-box h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.content-box h2 span {
+    font-weight: 400;
+}
+
+/* Paragraph */
+.content-box p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.content-box p span{
+    font-weight: 700;
+    margin: 0px;
+}
+
+/* Call-to-Action Button */
+.btn-primary {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #ff6600;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    margin-top: 15px; /* Adds spacing between paragraph and button */
+}
+
+.btn-primary:hover {
+    background: #e55a00;
+    transform: scale(1.05);
+}
+
+/*---------- Featured-cars ----------*/
+.car-listings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.car-listings h2 {
+    font-size: 36px; /* Increased font size for better emphasis */
+    margin-bottom: 30px;
+    font-weight: 700; /* Enhanced font weight */
+}
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 30%;
+}
+
+.car-item {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.car-item:hover {
+    transform: scale(1.05);
+}
+
+.car-image img {
+    width: 100%;
+    height: auto;
+}
+
+.car-info {
+    padding: 15px;
+}
+
+.car-meta span {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.desc {
+    font-size: 14px;
+    color: #777;
+}
+
+/*---------- Login Section ----------*/
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background: #f3f4f6;
+}
+.login_form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+}
+.login_form h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+.login_option {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.option a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ddd;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+    color: #000;
+    transition: 0.3s;
+}
+.option a:hover {
+    background: #ff6b00;
     color: #fff;
 }
-
-/* Container */
-.container {
-    background: rgba(252, 247, 221, 0.6); /* Adjusted opacity for better readability */
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 420px;
-    margin: 90px auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Softer shadow */
+.separator {
+    position: relative;
     text-align: center;
-    color: #000000;
+    margin: 10px 0;
 }
-
-.container h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: bold;
+.separator span {
+    background: #fff;
+    padding: 0 10px;
 }
-
-.container p {
-    font-size: 14px;
-    margin-bottom: 20px; /* Added spacing for better layout */
+.separator:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
 }
-
-/* Form Elements */
-form label {
-    display: block;
+.input_box {
     text-align: left;
-    margin: 10px 0 5px;
-    font-weight: bold; /* Added for emphasis */
+    margin-bottom: 15px;
 }
-
-form input,
-form textarea {
+.input_box label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.input_box input {
     width: 100%;
     padding: 10px;
-    margin: 10px 0 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    background: #f9f9f9;
+}
+.password_title {
+    display: flex;
+    justify-content: space-between;
     font-size: 14px;
 }
-
-form input:focus,
-form textarea:focus {
-    border-color: #000;
-    outline: none;
-    background-color: #fff; /* Added slight highlight for focus */
-}
-
 button {
     width: 100%;
     padding: 10px;
+    background: #1E3A8A;
+    color: #fff;
     border: none;
-    background-color: #4b4b4b;
-    color: #ffffff;
     border-radius: 5px;
-    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: 0.3s;
 }
-
 button:hover {
-    /*background-color: #f9e000;*/
-    font-weight: bold; /* Slightly darker shade on hover */
+    background: #ff6b00;
+}
+.sign_up {
+    margin-top: 15px;
+}
+.sign_up a {
+    color: #ff6b00;
+    text-decoration: none;
 }
 
-/* Form Links */
-.form-links {
+/*---------- Contact Us Section ----------*/
+.contact-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+.contact-section h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.contact-form {
+    display: flex;
+    justify-content: center;
+}
+.contact-form form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+.contact-form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    text-align: left;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background: #1E3A8A;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.contact-form button:hover {
+    background: #ff6b00;
+}
+
+/*---------- About Us Section ----------*/
+.about-us {
+    padding: 50px 20px;
+    background: #f8f9fa; /* Subtle background color for better contrast */
+    text-align: center;
+}
+
+.about-us .container {
+    max-width: 900px;
+    margin: auto;
+    margin-bottom: 30px; /* Add space between sections */
+}
+
+.about-us h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.about-us h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.about-article p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.about-us ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-us ul li {
+    display: inline-block;
+    background: #ffffff;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/*---------- Car Listing Section ----------*/
+
+
+/*---------- Footer ----------*/
+footer {
+    background: #1E3A8A;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: auto;
+}
+.footer-content {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.footer-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.footer-content p {
+    margin: 5px 0;
+}
+.footer-list {
+    list-style: none;
+    padding: 0;
+}
+.footer-list li {
+    margin: 5px 0;
+}
+.footer-list li a {
+    color: #fff;
+    text-decoration: none;
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    list-style: none;
+}
+.social-icons li a {
+    color: #fff;
+    font-size: 20px;
+    transition: 0.3s;
+}
+.social-icons li a:hover {
+    color: #ff6b00;
+}
+.bottom-bar {
+    text-align: center;
     margin-top: 15px;
     font-size: 14px;
 }
 
-.form-links a {
-    color: #000000;
-    text-decoration: none;
-}
-
-.form-links a:hover {
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px; /* Adjust padding for smaller screens */
-    }
-
-    nav ul {
-        flex-direction: column;
-        width: 100%;
-        padding: 0;
-    }
-
-    nav ul li {
-        margin: 10px 0; /* Adjust margin for stacked items */
-    }
-
-    .container {
-        margin: 50px 20px;
-        width: auto;
-    }
+/* Quick Links */
+.footer-content ul.footer-list li a:hover {
+    color: #ff6b00;
 }
