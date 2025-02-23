@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Rent Ride for any questions or inquiries. Explore our wide range of vehicles for rent at affordable prices.">
-    <title>Contact Us - Rent Ride</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-    <!-- Header Section -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Contact Rent Ride for any questions or inquiries. Explore our wide range of vehicles for rent at affordable prices.">
+        <title>Contact Us - Rent Ride</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <!-- Header Section -->
         <header>
             <div class="header-container">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="Image\Rent Ride.png" class="logo-img">
+                        <img src="Image/Rent Ride.png" class="logo-img">
                     </a>
                 </div>
                 <div class="contact-info">
                     <div class="circle_icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-                    <p>Support: <br> <a href="mailto:support@rentride.com">support@rentride.com</a></p>
+                    <p>For Support Mail us: <br> <span><a href="mailto:support@rentride.com" class="A">info@rentride.com</a></span></p>
                     <div class="circle_icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
-                    <p>Helpline: <br> <a href="tel:+919876543210">+91 98765 43210</a></p>
+                    <p>Service Helpline: <br> <span><a href="tel:+919876543210" class="A">+91 98765 43210</a></span></p>
                 </div>
                 <div class="btn-login">
                     <a href="login.html">Login/Register</a>
                 </div>
             </div>
         </header>
-    
+        
         <!-- Navigation Bar -->
         <nav aria-label="Main navigation">
             <div class="nav-container">
@@ -47,62 +47,57 @@
             </div>
         </nav>
 
-    <!-- Contact Us Section -->
-    <main>
-        <section class="contact-section" role="form">
-            <div class="container">
+        <!-- Contact Us Section -->
+        <section class="contact-section">
+            <!-- First Row -->
+            <div class="contact-title">
                 <h2>Contact Us</h2>
-                <p>If you have any questions or inquiries, feel free to contact us using the form below.</p>
-                <div class="contact-form">
-                    <form action="submit_contact.php" method="POST">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Write your message here..." rows="5" required></textarea>
-
+                <p>We would love to hear from you! Fill out the form below, or reach us through our contact details.</p>
+            </div>
+    
+            <!-- Second Row (Form & Contact Info) -->
+            <div class="contact-wrapper">
+                <!-- Left Side: Contact Details -->
+                <div class="contact-details">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Street, City, Country</p>
+                    <p><i class="fas fa-envelope"></i> support@example.com</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                </div>
+                <!-- Right Side: Contact Form -->
+                <div class="contact-box">
+                    <form action="#">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <textarea placeholder="Write your message" required></textarea>
                         <button type="submit">Send Message</button>
                     </form>
                 </div>
             </div>
-        </section>
-    </main>
+        </section>        
 
-    <!-- Footer Section -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <h3>Contact Us</h3>
-                <p>Email: <a href="mailto:info@rentride.com">info@rentride.com</a></p>
-                <p>Phone: <a href="tel:+121565565556">+121 56556 565556</a></p>
-                <p>Address: Your Address 123 street</p>
+        <!-- Footer Section -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <h3>Contact Us</h3>
+                    <p>Email: <a href="mailto:info@rentride.com">info@rentride.com</a></p>
+                    <p>Phone: <a href="tel:+121565565556">+91 98765 43210</a></p>
+                    <p>Address: D&M Block, Alpesh Complex</p>
+                </div>
+                <div class="footer-content">
+                    <h3>Follow Us</h3>
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-content">
-                <h3>Quick Links</h3>
-                <ul class="footer-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about-us.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="car-listing.html">Cars</a></li>
-                    <li><a href="contact-us.html">Contact</a></li>
-                </ul>
+            <div class="bottom-bar">
+                <p>&copy; 2025 Rent Ride. All rights reserved.</p>
             </div>
-            <div class="footer-content">
-                <h3>Follow Us</h3>
-                <ul class="social-icons">
-                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="bottom-bar">
-            <p>&copy; 2025 Rent Ride. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
+        </footer>
+    </body>
 </html>
