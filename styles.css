@@ -88,6 +88,7 @@ nav {
 .right {
     display: flex;
     align-items: center;
+    font-weight: 600;
 }
 .nav-container ul {
     list-style: none;
@@ -701,7 +702,7 @@ body {
 }
 
 .image-container img {
-    width: 200px;
+    width: 300px;
     height: auto;
     border-radius: 8px;
 }
