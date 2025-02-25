@@ -10,6 +10,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="script.js"></script>
     </head>
     <body>
         <!-- Header Section -->
@@ -33,16 +34,34 @@
         </header>
 
         <!-- Navigation Bar -->
-        <nav aria-label="Main navigation">
+        <nav class="navbar">
             <div class="nav-container">
-                <div class="left">Rent Ride</div>
-                <div class="right">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="car-listing.html">Explore Cars</a></li>
-                        <li><a href="contact-us.html">Contact Us</a></li>
-                        <li><a href="about-us.html" class="active">About Us</a></li>
-                    </ul>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="car-listing.html">Car Listing</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                </ul>
+
+                <div class="nav-right">
+                    <!-- User Dropdown -->
+                    <div class="user-menu" id="userMenu">
+                        <div class="user-icon">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="user-name">TEST</div>
+                        <div class="user-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown-content" id="dropdownMenu">
+                        <a href="#">PROFILE SETTINGS</a>
+                        <a href="#">UPDATE PASSWORD</a>
+                        <a href="#">MY BOOKING</a>
+                        <a href="#">SIGN OUT</a>
+                    </div>
                 </div>
             </div>
         </nav>

@@ -22,7 +22,7 @@ header {
     padding: 0 20px;
 }
 .logo-img {
-    height: 50px;
+    height: 60px;
 }
 .contact-info {
     display: flex;
@@ -68,62 +68,135 @@ header {
 
 /*---------- Navigation Bar ----------*/
 
-nav {
-    background: #0F172A;
-    padding: 10px 0;
+.navbar { 
+    background-color: #0F172A;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
 }
+
 .nav-container {
+    width: 90%;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
     margin: auto;
     padding: 0 20px;
 }
-.left {
-    font-size: 24px;
-    color: #fff;
-    font-weight: 600;
-}
-.right {
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-}
-.nav-container ul {
+
+/* Navigation Links */
+.nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    padding: 0;
+    margin: 0;
 }
-.nav-container ul li {
+
+.nav-links li {
+    margin: 0 15px;
     position: relative;
 }
-/* Navigation links */
-.nav-container ul li a {
-    color: #fff;
+
+.nav-links li a {
     text-decoration: none;
-    font-weight: 500;
-    padding: 10px 15px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
     position: relative;
-    display: inline-block;
-    transition: color 0.3s ease;
 }
-/* Add center-aligned hover underline */
-.nav-container ul li a::after {
+
+/* Underline Animation */
+.nav-links li a::after {
     content: "";
     position: absolute;
-    left: 50%;
-    bottom: -5px; /* Adjust to control distance from text */
-    width: 0;
-    height: 3px;
-    background-color: #ff0011;
-    transition: width 0.3s ease, left 0.3s ease;
-    transform: translateX(-50%);
-}
-/* Hover effect: Expands line from center */
-.nav-container ul li a:hover::after {
     width: 100%;
-    left: 50%;
+    height: 2px;
+    background-color: red;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-links li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Right Section */
+.nav-right {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* User Menu */
+.user-menu {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+/* User Icon */
+.user-icon i {
+    font-size: 20px;
+    color: white;
+}
+
+/* User Name */
+.user-name {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 10px;
+}
+
+/* User Arrow */
+.user-arrow {
+    margin-left: 10px;
+}
+
+.user-arrow i {
+    font-size: 14px;
+    color: white;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: black;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 50px;
+    padding: 5px 0;
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #ff0011;
+}
+
+/* Show Dropdown */
+.show {
+    display: block;
 }
 
 /*---------- Banner Section (Background Image) ----------*/
@@ -759,8 +832,7 @@ button:hover {
 .car-listing {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    flex: 1;
+    gap: 20px;  
 }
 
 .car-card {
