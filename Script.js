@@ -1,3 +1,6 @@
+//===============// 
+// User Dropdown //
+//===============//
 document.addEventListener("DOMContentLoaded", function () {
     const userMenu = document.getElementById("userMenu");
     const dropdownMenu = document.getElementById("dropdownMenu");
@@ -12,5 +15,21 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!event.target.closest("#userMenu")) {
             dropdownMenu.classList.remove("show");
         }
+    });
+});
+
+//=======================// 
+// User Profile Details //
+//=====================//
+document.addEventListener("DOMContentLoaded", function () {
+    const profileForm = document.querySelector(".profile-form");
+
+    profileForm.addEventListener("input", function () {
+        document.getElementById("display-full-name").textContent = document.getElementById("full-name").value || "N/A";
+        document.getElementById("display-email").textContent = document.getElementById("email").value || "N/A";
+        document.getElementById("display-phone").textContent = document.getElementById("phone").value || "N/A";
+        document.getElementById("display-dob").textContent = document.getElementById("dob").value || "N/A";
+        document.getElementById("display-address").textContent = document.getElementById("address").value || "N/A";
+        document.getElementById("display-city").textContent = document.getElementById("city").value || "N/A";
     });
 });

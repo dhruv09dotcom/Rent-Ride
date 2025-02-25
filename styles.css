@@ -460,6 +460,7 @@ h3 {
     font-size: 14px;
 }
 .password_title a {
+    text-decoration: none;
     color: #ff0011;
 }
 .password_title a:hover {
@@ -492,6 +493,151 @@ button:hover {
 }
 .sign_up a:hover {
     font-weight: 700;
+}
+
+/*---------- Forgot Password Section ----------*/
+.forgot-password {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background-color: #f4f4f4;
+}
+
+.forgot-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px;
+}
+
+.forgot-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.forgot-container p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 94.5%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+}
+.input-group input:hover{
+    transform: scale(1.05);
+}
+
+.btn-reset {
+    width: 94%;
+    padding: 10px;
+    background-color: #0F172A;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-reset:hover {
+    background: #ff0011;
+    transform: scale(1.05);
+}
+
+.back-to-login {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.back-to-login a {
+    color: #0F172A;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-to-login a:hover {
+    text-decoration: none;
+    color: #ff0011;
+    font-weight: 700;
+}
+
+/*---------- Update Password Section ----------*/
+.update-password {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background-color: #f4f4f4;
+}
+
+.update-password .container {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.update-password h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #000;
+}
+
+.update-password-form .input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.update-password-form label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.update-password-form input {
+    width: 96%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.update-password-form .btn-update {
+    width: 94%;
+    padding: 10px;
+    background-color: #0F172A;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.update-password-form .btn-update:hover {
+    background: #ff0011;
+    transform: scale(1.05);
 }
 
 /*---------- Register Section ----------*/
@@ -980,4 +1126,66 @@ footer {
     margin-top: 15px;
     font-size: 14px;
     background-color: #191919;
+}
+
+/*---------- Profile Settings Section ----------*/
+.profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.profile-container {
+    display: flex;
+    gap: 20px;
+}
+
+.profile-details {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.profile-settings {
+    background: #fff;
+    width: 550px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.details-box p {
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+.profile-form .form-group {
+    margin-bottom: 15px;
+}
+
+.profile-form input, .profile-form textarea {
+    width: 96%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+.profile-form .btn-save {
+    width: 96%;
+    padding: 10px;
+    background: #0F172A;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.profile-form .btn-save:hover {
+    background: #ff0011;
+    transform: scale(1.05);
 }
