@@ -74,7 +74,6 @@ header {
     display: flex;
     justify-content: center;
 }
-
 .nav-container {
     width: 90%;
     max-width: 1200px;
@@ -84,7 +83,6 @@ header {
     margin: auto;
     padding: 0 20px;
 }
-
 /* Navigation Links */
 .nav-links {
     list-style: none;
@@ -92,12 +90,10 @@ header {
     padding: 0;
     margin: 0;
 }
-
 .nav-links li {
     margin: 0 15px;
     position: relative;
 }
-
 .nav-links li a {
     text-decoration: none;
     color: white;
@@ -106,7 +102,6 @@ header {
     transition: 0.3s;
     position: relative;
 }
-
 /* Underline Animation */
 .nav-links li a::after {
     content: "";
@@ -119,18 +114,15 @@ header {
     transform: scaleX(0);
     transition: transform 0.3s ease-in-out;
 }
-
 .nav-links li a:hover::after {
     transform: scaleX(1);
 }
-
 /* Right Section */
 .nav-right {
     display: flex;
     align-items: center;
     position: relative;
 }
-
 /* User Menu */
 .user-menu {
     display: flex;
@@ -142,13 +134,11 @@ header {
     cursor: pointer;
     position: relative;
 }
-
 /* User Icon */
 .user-icon i {
     font-size: 20px;
     color: white;
 }
-
 /* User Name */
 .user-name {
     color: white;
@@ -156,17 +146,14 @@ header {
     font-weight: 500;
     margin: 0 10px;
 }
-
 /* User Arrow */
 .user-arrow {
     margin-left: 10px;
 }
-
 .user-arrow i {
     font-size: 14px;
     color: white;
 }
-
 /* Dropdown Content */
 .dropdown-content {
     display: none;
@@ -179,7 +166,6 @@ header {
     top: 50px;
     padding: 5px 0;
 }
-
 /* Dropdown Links */
 .dropdown-content a {
     color: white;
@@ -188,12 +174,14 @@ header {
     font-size: 12px;
     font-weight: 400;
     text-decoration: none;
+    transition: transform 0.3s ease-in-out;
 }
-
 .dropdown-content a:hover {
-    background-color: #ff0011;
+    background-color: #fff;
+    color: #000;
+    transform: scale(1.05);
+    font-weight: 800;
 }
-
 /* Show Dropdown */
 .show {
     display: block;
