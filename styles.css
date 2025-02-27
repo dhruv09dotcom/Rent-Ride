@@ -1,4 +1,6 @@
+/*====================================*/
 /*---------- General Styles ----------*/
+/*====================================*/
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -6,7 +8,9 @@ body {
     background-color: #f8f9fa;
 }
 
+/*====================================*/
 /*---------- Header Section ----------*/
+/*====================================*/
 
 header {
     background: #fff; /* Unified background color */
@@ -66,7 +70,9 @@ header {
     transform: scale(1.05);
 }
 
+/*====================================*/
 /*---------- Navigation Bar ----------*/
+/*====================================*/
 
 .navbar { 
     background-color: #0F172A;
@@ -187,7 +193,9 @@ header {
     display: block;
 }
 
+/*=======================================================*/
 /*---------- Banner Section (Background Image) ----------*/
+/*=======================================================*/
 
 .bg-container {
     position: relative;
@@ -218,7 +226,9 @@ header {
     z-index: -1; /* Keeps it behind the content */
 }
 
+/*=====================================*/
 /*---------- Welcome Section ----------*/
+/*=====================================*/
 /* Content */
 
 .Word {
@@ -236,7 +246,9 @@ header {
     font-weight: 400;
 }
 
+/*=======================================*/
 /*---------- Paragraph Section ----------*/
+/*=======================================*/
 
 .paragraph {
     display: flex;
@@ -290,7 +302,9 @@ header {
     transform: scale(1.05);
 }
 
+/*==========================================*/
 /*---------- Explore Cars Section ----------*/
+/*==========================================*/
 
 .car-listings {
     display: flex;
@@ -352,7 +366,9 @@ h3 {
     color: #777;
 }
 
+/*===================================*/
 /*---------- Login Section ----------*/
+/*===================================*/
 
 .login-section {
     display: flex;
@@ -483,7 +499,10 @@ button:hover {
     font-weight: 700;
 }
 
+/*=============================================*/
 /*---------- Forgot Password Section ----------*/
+/*=============================================*/
+
 .forgot-password {
     display: flex;
     justify-content: center;
@@ -491,7 +510,6 @@ button:hover {
     height: 70vh;
     background-color: #f4f4f4;
 }
-
 .forgot-container {
     background: #fff;
     padding: 30px;
@@ -500,23 +518,19 @@ button:hover {
     text-align: center;
     width: 350px;
 }
-
 .forgot-container h2 {
     font-size: 24px;
     margin-bottom: 10px;
 }
-
 .forgot-container p {
     font-size: 14px;
     color: #555;
     margin-bottom: 20px;
 }
-
 .input-group {
     width: 100%;
     margin-bottom: 15px;
 }
-
 .input-group input {
     width: 94.5%;
     padding: 10px;
@@ -528,7 +542,6 @@ button:hover {
 .input-group input:hover{
     transform: scale(1.05);
 }
-
 .btn-reset {
     width: 94%;
     padding: 10px;
@@ -540,30 +553,28 @@ button:hover {
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
-
 .btn-reset:hover {
     background: #ff0011;
     transform: scale(1.05);
 }
-
 .back-to-login {
     margin-top: 10px;
     font-size: 14px;
 }
-
 .back-to-login a {
     color: #0F172A;
     text-decoration: none;
     font-weight: 500;
 }
-
 .back-to-login a:hover {
     text-decoration: none;
     color: #ff0011;
     font-weight: 700;
 }
 
+/*=============================================*/
 /*---------- Update Password Section ----------*/
+/*=============================================*/
 .update-password {
     display: flex;
     justify-content: center;
@@ -571,7 +582,6 @@ button:hover {
     height: 70vh;
     background-color: #f4f4f4;
 }
-
 .update-password .container {
     display: flex;
     flex-direction: column;
@@ -582,19 +592,16 @@ button:hover {
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
-
 .update-password h2 {
     font-size: 22px;
     margin-bottom: 20px;
     font-weight: 600;
     color: #000;
 }
-
 .update-password-form .input-group {
     margin-bottom: 15px;
     text-align: left;
 }
-
 .update-password-form label {
     display: block;
     font-size: 14px;
@@ -602,7 +609,6 @@ button:hover {
     margin-bottom: 5px;
     color: #000;
 }
-
 .update-password-form input {
     width: 96%;
     padding: 10px;
@@ -610,7 +616,6 @@ button:hover {
     border-radius: 5px;
     font-size: 14px;
 }
-
 .update-password-form .btn-update {
     width: 94%;
     padding: 10px;
@@ -622,13 +627,14 @@ button:hover {
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
-
 .update-password-form .btn-update:hover {
     background: #ff0011;
     transform: scale(1.05);
 }
 
+/*======================================*/
 /*---------- Register Section ----------*/
+/*======================================*/
 
 .signup-section {
     display: flex;
@@ -722,7 +728,9 @@ button:hover {
     margin-right: 10px;
 }
 
+/*========================================*/
 /*---------- Contact-Us Section ----------*/
+/*========================================*/
 
 .contact-section {
     width: 80%;
@@ -827,7 +835,9 @@ button:hover {
     }
 }
 
+/*======================================*/
 /*---------- About Us Section ----------*/
+/*======================================*/
 
 /* About Section */
 .about-section {
@@ -837,7 +847,6 @@ button:hover {
     display: grid;
     gap: 40px;
 }
-
 /* General Styling for Blocks */
 .about-container,
 .mission-container,
@@ -851,79 +860,66 @@ button:hover {
     background: white;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .about-container:hover,
 .mission-container:hover,
 .why-choose-container:hover {
     transform: translateY(-5px);
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
 }
-
 /* Alternate Layout - Zig-Zag */
 .about-container {
     flex-direction: row;
 }
-
 .mission-container {
     flex-direction: row-reverse;
     background: #007bff;
     color: white;
 }
-
 .why-choose-container {
     flex-direction: row;
 }
-
 /* Text Styling */
 .text-content {
     flex: 1;
     padding: 0 20px;
 }
-
 .text-content h1,
 .text-content h2 {
     font-size: 26px;
     margin-bottom: 10px;
 }
-
 .text-content p,
 .why-choose-list {
     font-size: 18px;
     line-height: 1.6;
 }
-
 /* Icons & Images */
 .image-container {
     flex: 1;
     display: flex;
     justify-content: center;
 }
-
 .image-container img {
     width: 300px;
     height: auto;
     border-radius: 8px;
 }
-
 /* Why Choose Us List */
 .why-choose-list {
     list-style: none;
     padding: 0;
 }
-
 .why-choose-list li {
     margin: 10px 0;
     font-weight: bold;
     display: flex;
     align-items: center;
 }
-
 .why-choose-list li::before {
     content: "✔️";
     margin-right: 10px;
     font-size: 20px;
 }
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .about-container,
@@ -942,7 +938,9 @@ button:hover {
     }
 }
 
+/*=========================================*/
 /*---------- Car Listing Section ----------*/
+/*=========================================*/
 
 .car-listing-section {
     width: 100%;
@@ -950,7 +948,6 @@ button:hover {
     display: flex;
     justify-content: center;
 }
-
 .car-listing-container {
     display: flex;
     flex-wrap: wrap;
@@ -961,14 +958,12 @@ button:hover {
     position: relative;
     justify-content: center;
 }
-
 /* Car Listing Styles */
 .car-listing {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;  
 }
-
 .car-card {
     display: flex;
     align-items: center;
@@ -982,7 +977,6 @@ button:hover {
     width: 500px;
     height: 200px;
 }
-
 .car-card img {
     width: 195px;
     height: 145px;
@@ -990,23 +984,19 @@ button:hover {
     border-radius: 5px;
     margin-right: 15px;
 }
-
 .cars-info {
     flex: 1;
 }
-
 .cars-info h3 {
     font-size: 18px;
     margin-bottom: 10px;
 }
-
 .prices {
     font-size: 16px;
     color: #28a745;
     font-weight: bold;
     margin-bottom: 10px;
 }
-
 .cars-meta {
     display: flex;
     gap: 15px;
@@ -1014,7 +1004,6 @@ button:hover {
     color: #555;
     margin-bottom: 10px;
 }
-
 .details-btn {
     background-color: #ff0011;
     color: white;
@@ -1027,11 +1016,13 @@ button:hover {
     width: fit-content;
     margin-top: 10px;
 }
-
 .details-btn:hover {
     background-color: #0F172A;
 }
-
+.details-btn a{
+    text-decoration: none;
+    color: #fff;
+}
 /* Responsive Design */
 @media (max-width: 768px) {
     .car-card {
@@ -1049,7 +1040,9 @@ button:hover {
     }
 }
 
+/*====================================*/
 /*---------- Footer Section ----------*/
+/*====================================*/
 
 footer {
     background: #222222;
@@ -1116,19 +1109,20 @@ footer {
     background-color: #191919;
 }
 
+/*==============================================*/
 /*---------- Profile Settings Section ----------*/
+/*==============================================*/
+
 .profile-section {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     padding: 20px;
 }
-
 .profile-container {
     display: flex;
     gap: 20px;
 }
-
 .profile-details {
     flex: 1;
     padding: 20px;
@@ -1142,16 +1136,13 @@ footer {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
 .details-box p {
     font-size: 16px;
     margin: 8px 0;
 }
-
 .profile-form .form-group {
     margin-bottom: 15px;
 }
-
 .profile-form input, .profile-form textarea {
     width: 96%;
     padding: 10px;
@@ -1160,7 +1151,6 @@ footer {
     border-radius: 5px;
     outline: none;
 }
-
 .profile-form .btn-save {
     width: 96%;
     padding: 10px;
@@ -1172,8 +1162,102 @@ footer {
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
-
 .profile-form .btn-save:hover {
     background: #ff0011;
     transform: scale(1.05);
+}
+
+/*=========================================*/
+/*---------- My Bookings Section ----------*/
+/*=========================================*/
+
+.my-bookings {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.booking-container {
+    text-align: center;
+}
+
+.booking-number {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.booking-number span {
+    color: #d90429;
+}
+
+.booking-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.car-image {
+    width: 150px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.car-info {
+    flex: 1;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.car-info h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.status {
+    padding: 10px 20px;
+    border: 2px solid green;
+    color: green;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    width: 120px;
+}
+
+/* Invoice Section */
+.invoice-heading {
+    color: blue;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-table th, .invoice-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.invoice-table th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+.invoice-table tfoot td {
+    font-weight: bold;
+    background-color: #e9ecef;
 }
