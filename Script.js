@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-//=======================// 
+//======================// 
 // User Profile Details //
-//=====================//
+//======================//
 document.addEventListener("DOMContentLoaded", function () {
     const profileForm = document.querySelector(".profile-form");
 
@@ -33,3 +33,20 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("display-city").textContent = document.getElementById("city").value || "N/A";
     });
 });
+
+//=====================// 
+// Car Details Section //
+//=====================//
+function showTab(tabName) {
+    // Remove active class from all tab content
+    document.querySelectorAll(".car-tab-content").forEach(tab => tab.classList.remove("active"));
+    
+    // Add active class to the selected tab content
+    document.getElementById(tabName).classList.add("active");
+    
+    // Remove active class from all tab buttons
+    document.querySelectorAll(".car-tab").forEach(button => button.classList.remove("active"));
+    
+    // Add active class to the clicked tab button
+    document.querySelector(`[onclick="showTab('${tabName}')"]`).classList.add("active");
+}

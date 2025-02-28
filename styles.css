@@ -1176,21 +1176,17 @@ footer {
     margin: 20px auto;
     padding: 20px;
 }
-
 .booking-container {
     text-align: center;
 }
-
 .booking-number {
     color: red;
     font-size: 20px;
     font-weight: bold;
 }
-
 .booking-number span {
     color: #d90429;
 }
-
 .booking-details {
     display: flex;
     align-items: center;
@@ -1201,24 +1197,20 @@ footer {
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
 }
-
 .car-image {
     width: 150px;
     height: auto;
     border-radius: 5px;
 }
-
 .car-info {
     flex: 1;
     padding: 0 20px;
     text-align: left;
 }
-
 .car-info h3 {
     margin-bottom: 10px;
     font-size: 18px;
 }
-
 .status {
     padding: 10px 20px;
     border: 2px solid green;
@@ -1228,14 +1220,12 @@ footer {
     text-align: center;
     width: 120px;
 }
-
 /* Invoice Section */
 .invoice-heading {
     color: blue;
     font-size: 22px;
     margin-bottom: 10px;
 }
-
 .invoice-table {
     width: 100%;
     border-collapse: collapse;
@@ -1245,19 +1235,157 @@ footer {
     overflow: hidden;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
-
 .invoice-table th, .invoice-table td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
 }
-
 .invoice-table th {
     background-color: #f8f8f8;
     font-weight: bold;
 }
-
 .invoice-table tfoot td {
     font-weight: bold;
     background-color: #e9ecef;
+}
+
+/*=========================================*/
+/*---------- Car Details Section ----------*/
+/*=========================================*/
+
+/* Main Wrapper */
+.car-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+/* Left Side: Car Information */
+.car-info-container {
+    flex: 1;
+    padding: 20px;
+    width: 65%;
+}
+
+.car-title {
+    font-size: 24px;
+    color: #222;
+}
+
+.car-price {
+    font-size: 26px;
+    color: #28a745;
+    font-weight: bold;
+}
+.car-price span {
+    font-size: 14px;
+    display: block;
+    color: black;
+}
+
+.car-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 400px;
+}
+
+.car-detail-item {
+    text-align: center;
+    padding: 15px;
+    background: #f0f0f0;
+    width: 90px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.car-detail-item .circle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 50%;
+    margin-bottom: 8px;
+}
+
+.car-tabs {
+    display: flex;
+    margin-top: 20px;
+    width: 400px;
+}
+
+.car-tab {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    background: #ddd;
+    color: #000;
+    margin-right: 5px;
+}
+.car-tab:hover{
+    color: #fff;
+}
+
+.car-tab.active {
+    background: red;
+    color: white;
+}
+
+.car-tab-content {
+    display: none;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+.car-tab-content.active {
+    display: block;
+    width: 369px;
+    margin-top: 20px;
+}
+
+/* Right Side: Booking Section */
+.car-booking-container {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    min-width: 45%;
+    height: 70%;
+}
+
+.car-booking-container h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.car-booking-container input, .car-booking-container textarea {
+    width: 94%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.book-btn {
+    width: 94%;
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.book-btn:hover {
+    background: darkred;
 }
