@@ -1,0 +1,295 @@
+/*====================================*/
+/*---------- General Styles ----------*/
+/*====================================*/
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+/*=========================================*/
+/*---------- Admin Login Section ----------*/
+/*=========================================*/
+
+.admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #3b3b98, #130f40);
+}
+.login-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+.input-group label {
+    display: block;
+    font-weight: bold;
+}
+.input-group input {
+    width: 94%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    width: 94%;
+    padding: 10px;
+    background: #3b3b98;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+}
+button:hover {
+    background: #27276d;
+    transform: scale(1.05);
+}
+
+/*====================================*/
+/*---------- Navigation Bar ----------*/
+/*====================================*/
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2c3e50;
+    padding: 5px 20px;
+    color: white;
+}
+.navbar a{
+    text-decoration: none;
+    color: #fff;
+}
+/* H1 Styling */
+.navbar h1 {
+    font-size: 20px;
+}
+/* Right Section */
+.nav-right {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+/* User Menu */
+.user-menu {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+/* User Icon */
+.user-icon i {
+    font-size: 20px;
+    color: white;
+}
+/* User Name */
+.user-name {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 10px;
+}
+/* User Arrow */
+.user-arrow {
+    margin-left: 10px;
+}
+.user-arrow i {
+    font-size: 14px;
+    color: white;
+}
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 20px;
+    background-color: black;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 72px;
+    padding: 5px 0;
+}
+/* Dropdown Links */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+}
+.dropdown-content a:hover {
+    background-color: #fff;
+    color: #000;
+    transform: scale(1.05);
+    font-weight: 800;
+}
+/* Show Dropdown */
+.show {
+    display: block;
+}
+
+/*=====================================*/
+/*---------- Sidebar Section ----------*/
+/*=====================================*/
+
+.main-container {
+    display: flex;
+    align-items: flex-start;
+}
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #34495e;
+    overflow-y: auto;
+}
+/* Sidebar Menu */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+.sidebar-menu li {
+    padding: 15px 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.sidebar-menu li a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 15px;
+}
+/* Icons in Sidebar */
+.sidebar-menu li a i {
+    font-size: 18px;
+}
+/* Dropdown in Sidebar */
+.dropdown-menu {
+    display: none;
+    list-style: none;
+    background: #2c3e50;
+    width: 120%;
+    padding: 5px 0;
+}
+
+.dropdown-menu li {
+    padding: 10px 20px;
+}
+.dropdown-menu li a {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease-in-out;
+}
+.dropdown-menu li a i {
+    font-size: 14px;
+}
+.dropdown-menu li a:hover {
+    border: 2px solid white;
+    transform: scale(1.05);
+}
+.dropdown-toggle:hover{
+    cursor: pointer;
+}
+/* Show Dropdown Below */
+.dropdown.active .dropdown-menu {
+    display: block;
+}
+/* Dropdown Arrow Rotation */
+.dropdown .dropdown-icon {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+.dropdown.active .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+/*=============================================*/
+/*---------- Update Password Section ----------*/
+/*=============================================*/
+
+.password-container {
+    flex-grow: 1;
+    max-width: 800px;
+    margin-left: 10px; /* Space from sidebar */
+    padding: 20px;
+}
+/* Page Title */
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+/* Form Container */
+.form-container {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    border-left: 5px solid #dedede;
+}
+/* Form Title */
+.form-container h3 {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 15px;
+}
+/* Input Group */
+.input-group {
+    margin-bottom: 15px;
+}
+.input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+.input-group input {
+    width: 98%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+/* Save Button */
+.btn-save {
+    padding: 10px 20px;
+    width: 150px;
+    background-color: #004085;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.btn-save:hover {
+    background-color: #002752;
+}
