@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Rent Ride: Your trusted car rental service. Explore our wide range of vehicles for rent at affordable prices.">
+        <title>Car Details | Rent Ride</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <!-- Header Section -->
+        <header>
+            <div class="header-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="Image/Rent Ride.png" class="logo-img">
+                    </a>
+                </div>
+                <div class="contact-info">
+                    <div class="circle_icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                    <p>For Support Mail us: <br> <span><a href="mailto:support@rentride.com" class="A">info@rentride.com</a></span></p>
+                    <div class="circle_icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                    <p>Service Helpline: <br> <span><a href="tel:+919876543210" class="A">+91 98765 43210</a></span></p>
+                </div>
+                <div class="btn-login">
+                    <a href="login.html">Login/Register</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="car-listing.html">Car Listing</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                </ul>
+
+                <div class="nav-right">
+                    <!-- User Dropdown -->
+                    <div class="user-menu" id="userMenu">
+                        <div class="user-icon">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="user-name">TEST</div>
+                        <div class="user-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown-content" id="dropdownMenu">
+                        <a href="profile.html">PROFILE SETTINGS</a>
+                        <a href="update-pwd.html">UPDATE PASSWORD</a>
+                        <a href="mybookings.html">MY BOOKING</a>
+                        <a href="#">SIGN OUT</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Car Details Section -->
+        <div class="car-wrapper">
+            <!-- First Row: Car Information on the Left -->
+            <div class="car-info-container">
+                <h1 class="car-title">Tata Nexon</h1>
+                <div class="car-price">₹1100 <span>Per Day</span></div>
+                
+                <div class="car-details">
+                    <div class="car-detail-item">
+                        <div class="circle"><i class="fa-solid fa-calendar-days"></i></div>
+                        <p>Reg. Year<br><span>2024</span></p>
+                    </div>
+                    <div class="car-detail-item">
+                        <div class="circle"><i class="fa-solid fa-gas-pump"></i></div>
+                        <p>Fuel Type<br><span>Diesel</span></p>
+                    </div>
+                    <div class="car-detail-item">
+                        <div class="circle"><i class="fa-solid fa-user-group"></i></div>
+                        <p>Seats<br><span>5</span></p>
+                    </div>
+                </div>
+                
+                <div class="car-tabs">
+                    <button class="car-tab active" onclick="showTab('car-overview')">Vehicle Overview</button>
+                    <button class="car-tab" onclick="showTab('car-accessories')">Accessories</button>
+                </div>
+                
+                <div id="car-overview" class="car-tab-content active">
+                    <p>Maruti Wagon R Latest Updates... Maruti Suzuki has launched the BS6 Wagon R S-CNG in India...</p>
+                </div>
+                <div id="car-accessories" class="car-tab-content">
+                    <p>Accessories details will be updated soon.</p>
+                </div>
+            </div>
+
+            <!-- Second Row: Booking Section on the Right -->
+            <div class="car-booking-container">
+                <h2><i class="fa-solid fa-envelope"></i> Book Now</h2>
+                <label>From Date:</label>
+                <input type="date">
+                <label>To Date:</label>
+                <input type="date">
+                <textarea placeholder="Message"></textarea>
+                <button class="book-btn">Book Now</button>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <h3>Contact Us</h3>
+                    <p>Email: <a href="mailto:info@rentride.com">info@rentride.com</a></p>
+                    <p>Phone: <a href="tel:+121565565556">+91 98765 43210</a></p>
+                    <p>Address: D&M Block, Alpesh Complex</p>
+                </div>
+                <div class="footer-content">
+                    <h3>Follow Us</h3>
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom-bar">
+                <p>&copy; 2025 Rent Ride. All rights reserved.</p>
+            </div>
+        </footer>
+    </body>
+</html>
