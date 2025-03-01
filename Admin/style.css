@@ -155,10 +155,6 @@ button:hover {
 /*---------- Sidebar Section ----------*/
 /*=====================================*/
 
-.main-container {
-    display: flex;
-    align-items: flex-start;
-}
 .sidebar {
     width: 250px;
     height: 100vh;
@@ -236,6 +232,10 @@ button:hover {
 /*---------- Update Password Section ----------*/
 /*=============================================*/
 
+.main-container {
+    display: flex;
+    align-items: flex-start;
+}
 .password-container {
     flex-grow: 1;
     max-width: 800px;
@@ -292,4 +292,85 @@ h2 {
 }
 .btn-save:hover {
     background-color: #002752;
+}
+
+/*=======================================*/
+/*---------- Dashboard Section ----------*/
+/*=======================================*/
+
+.main-container {
+    display: flex;
+    align-items: flex-start;
+}
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 1356px;
+}
+
+.dashboard h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: #f4f4f4;
+    padding-top: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.card p {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+.card a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 440px;
+    height: 50px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+    background-color: #fff;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* Card Colors */
+.blue {
+    background-color: #2874A6;
+    color: white;
+}
+
+.green {
+    background-color: #28A745;
+    color: white;
+}
+
+.orange {
+    background-color: #E67E22;
+    color: white;
 }
