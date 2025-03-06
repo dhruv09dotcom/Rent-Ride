@@ -790,3 +790,161 @@ body {
 .confirm-booking-container table td a:hover i {
     color: #000;
 }
+
+/*=============================================*/
+/*---------- Cancelled Booking Section ----------*/
+/*=============================================*/
+
+.cancelled-booking-content {
+    flex: 1;
+    padding: 12px;
+    background: white;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.cancelled-booking-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.cancelled-booking-container {
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.cancelled-booking-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cancelled-booking-container table thead {
+    background: #f8f8f8;
+}
+
+.cancelled-booking-container table th, .cancelled-booking-container table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #333;
+}
+
+.cancelled-booking-container table td i {
+    margin-right: 8px;
+    color: #555;
+}
+
+.cancelled-booking-container table td a:hover i {
+    color: #000;
+}
+
+/*====================================================*/
+/*---------- Update Contact-Us Info Section ----------*/
+/*====================================================*/
+
+.update-cui {
+    flex: 1;
+    padding: 12px;
+    max-width: 900px;
+    background: white;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+/* Update-cui-Container */
+.update-cui-container {
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-top: 20px;
+}
+
+.update-cui-container h3 {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.update-cui-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.update-cui-container label {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.update-cui-container input {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 98%;
+}
+.update-cui-container textarea{
+    height: 60px;
+    resize: none;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.update-cui-container button {
+    width: 150px;
+    background: #004085;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.update-cui-container button:hover {
+    background: #002752;
+}
+
+/*==============================================*/
+/*---------- Registered Users Section ----------*/
+/*==============================================*/
+
+.ru-content {
+    flex: 1;
+    padding: 12px;
+    background: white;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.ru-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.ru-container {
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.ru-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ru-container table thead {
+    background: #f8f8f8;
+}
+
+.ru-container table th, .ru-container table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #333;
+}
+
+.ru-container table td i {
+    margin-right: 8px;
+    color: #555;
+}
+
+.ru-container table td a:hover i {
+    color: #000;
+}
