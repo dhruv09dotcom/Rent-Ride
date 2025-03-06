@@ -71,7 +71,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="new-booking.html"><i class="fas fa-clock"></i> New Booking</a></li>
                             <li><a href="confirmed-booking.html"><i class="fas fa-check-circle"></i> Confirmed Booking</a></li>
-                            <li><a href="canceled-booking.html"><i class="fas fa-times-circle"></i> Canceled Booking</a></li>
+                            <li><a href="cancelled-booking.html"><i class="fas fa-times-circle"></i> Canceled Booking</a></li>
                         </ul>
                     </li>
 
@@ -87,8 +87,115 @@
                 </ul>
             </div>
 
-            <!-- Full Detail Section -->
-            
+            <!-- Add A Vehicle Section -->
+            <div class="vehicle-content">
+                <h2>Post A Vehicle</h2>
+                    <h3 class="heading">Basic Info</h3>
+                <form>
+                    <div class="vehicle-info">
+                        <div class="row-one">
+                            <div class="left">
+                                <label>Vehicle Title <span>*</span></label>
+                                <input type="text" required>
+                            </div>
+                            <div class="right">
+                                <label>Select Brand <span>*</span></label>
+                                <select required>
+                                    <option>Select</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="vehicle-overview">
+                            <label>Vehicle Overview <span>*</span></label>
+                            <textarea required></textarea>
+                        </div>
+
+                        <div class="row-two">
+                            <div class="left">
+                                <label>Price Per Day <span>*</span></label>
+                                <input type="number" required>
+                            </div>
+                            <div class="right">
+                                <label>Select Fuel Type <span>*</span></label>
+                                <select required>
+                                    <option>Select</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row-three">
+                            <div class="left">
+                                <label>Model Year <span>*</span></label>
+                                <input type="text" required>
+                            </div>
+                            <div class="right">
+                                <label>Seating Capacity <span>*</span></label>
+                                <input type="text" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vehicle-image">
+                        <div class="image-heading">
+                            <h3>Upload Images</h3>
+                        </div>
+                        <div class="image-container">
+                            <div class="image-row">
+                                <div class="image-box">
+                                    <label for="image1">Image 1 <span>*</span></label>
+                                    <input type="file" id="image1" required>
+                                </div>
+                                <div class="image-box">
+                                    <label for="image2">Image 2 <span>*</span></label>
+                                    <input type="file" id="image2" required>
+                                </div>
+                                <div class="image-box">
+                                    <label for="image3">Image 3 <span>*</span></label>
+                                    <input type="file" id="image3" required>
+                                </div>
+                            </div>
+                            <div class="image-row">
+                                <div class="image-box">
+                                    <label for="image4">Image 4 <span>*</span></label>
+                                    <input type="file" id="image4" required>
+                                </div>
+                                <div class="image-box">
+                                    <label for="image5">Image 5 <span>*</span></label>
+                                    <input type="file" id="image5" required>
+                                </div>
+                                <div class="image-box">
+                                    <label for="image5">Image 6 <span>*</span></label>
+                                    <input type="file" id="image6" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+
+                    <div class="accessories-section">
+                        <div class="accessories-heading">
+                            <h3>Accessories</h3>
+                        </div>
+                        <div class="accessories-container">
+                            <label><input type="checkbox"> Air Conditioner</label>
+                            <label><input type="checkbox"> Power Steering</label>
+                            <label><input type="checkbox"> CD Player</label>
+                            <label><input type="checkbox"> Power Door Locks</label>
+                            <label><input type="checkbox"> Driver Airbag</label>
+                            <label><input type="checkbox"> Central Locking</label>
+                            <label><input type="checkbox"> AntiLock Braking System</label>
+                            <label><input type="checkbox"> Passenger Airbag</label>
+                            <label><input type="checkbox"> Crash Sensor</label>
+                            <label><input type="checkbox"> Brake Assist</label>
+                            <label><input type="checkbox"> Power Windows</label>
+                            <label><input type="checkbox"> Leather Seats</label>
+                        </div>
+                        <div class="buttons">
+                            <button class="cancel">Cancel</button>
+                            <button class="save">Save changes</button>
+                        </div>
+                    </div>                    
+                </form>
+            </div>        
         </div>
     </body>
 </html>
