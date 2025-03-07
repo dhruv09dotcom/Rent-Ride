@@ -948,3 +948,80 @@ body {
 .ru-container table td a:hover i {
     color: #000;
 }
+
+/*=============================================*/
+/*---------- Booking Details Section ----------*/
+/*=============================================*/
+
+.booking-details {
+    flex: 1;
+    padding: 12px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.booking-details h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.booking-info h3 {
+    font-size: 20px;
+    color: red;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.details-table th, 
+.details-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.details-table th {
+    background: #f5f5f5;
+    font-weight: bold;
+}
+
+.details-table a {
+    color: blue;
+    text-decoration: none;
+}
+
+.status {
+    color: red;
+    font-weight: bold;
+}
+
+.action-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.confirm-btn, 
+.cancel-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.confirm-btn {
+    background: #007bff;
+    color: white;
+}
+
+.cancel-btn {
+    background: #dc3545;
+    color: white;
+}
