@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Rent Ride: Your trusted car rental service. Explore our wide range of vehicles for rent at affordable prices.">
-        <title>Update Password | Rent Ride</title>
+        <title>My Bookings | Rent Ride</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,6 +66,18 @@
             </div>
         </nav>
 
+        <!-- Banner Section (Background Image) -->
+        <div class="ps-container">
+            <div class="ps-overlay">
+                <h1>My Bookings</h1>
+                <nav>
+                    <a href="index.html">Home</a> >
+                    <a href="mybookings.html">My Booking</a>
+                </nav>
+            </div>
+            <img src="Image/profile-page-banner.jpg" alt="Profile Page Background" class="ps-img">
+        </div>
+
         <!-- My Bookings Section -->
         <section class="my-bookings">
             <div class="booking-container">
@@ -78,7 +90,7 @@
                     <div class="car-info">
                         <h3><b>Tata Curvv</b></h3>
                         <p><b>From</b> 20-02-2025 <b>To</b> 22-02-2025</p>
-                        <p><b>Message:</b> Picnic Booking</p>
+                        <p><b>Message:</b> Booking For Picnic</p>
                     </div>
                     <div class="status">
                         Confirmed
@@ -86,34 +98,39 @@
                 </div>
             </div>       
 
-                <!-- Invoice Section -->
-                <h3 class="invoice-heading">Invoice</h3>
-                <table class="invoice-table">
-                    <thead>
-                        <tr>
-                            <th>Car Name</th>
-                            <th>From Date</th>
-                            <th>To Date</th>
-                            <th>Total Days</th>
-                            <th>Rent / Day</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Tata Curvv</td>
-                            <td>20-02-2025</td>
-                            <td>22-02-2025</td>
-                            <td>2</td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="4"><b>Grand Total</b></td>
-                            <td><b>3000</b></td>
-                        </tr>
-                    </tfoot>
-                </table>
+            <!-- Invoice Section -->
+            <h3 class="invoice-heading">Invoice</h3>
+            <table class="invoice-table">
+                <thead>
+                    <tr>
+                        <th>Car Name</th>
+                        <th>From Date</th>
+                        <th>To Date</th>
+                        <th>Total Days</th>
+                        <th>Rent / Day</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tata Curvv</td>
+                        <td>20-02-2025</td>
+                        <td>22-02-2025</td>
+                        <td>2</td>
+                        <td>1500</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4"><b>Grand Total</b></td>
+                        <td><b>3000</b></td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <!-- Booking Cancellation & Print Invoice Buttons -->
+            <div class="button-container">
+                <button class="cancel-button" onclick="cancelBooking()">Cancel Booking</button>
+                <button class="print-button" onclick="printInvoice()">Print Invoice</button>
             </div>
         </section>
 

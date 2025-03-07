@@ -50,3 +50,25 @@ function showTab(tabName) {
     // Add active class to the clicked tab button
     document.querySelector(`[onclick="showTab('${tabName}')"]`).classList.add("active");
 }
+
+//==================================// 
+// Cancel Booking and Print Invoice //
+//==================================//
+function cancelBooking() {
+    if (confirm("Are you sure you want to cancel this booking?")) {
+        alert("Booking has been canceled.");
+        document.querySelector(".status").innerHTML = "Cancelled";
+        document.querySelector(".status").style.color = "red";
+        document.querySelector(".status").style.borderColor = "red";
+    }
+}
+
+function printInvoice() {
+    var printContents = document.querySelector(".my-bookings").innerHTML;
+    var originalContents = document.body.innerHTML;
+    
+    document.body.innerHTML = "<html><head><title>Invoice</title></head><body>" + printContents + "</body></html>";
+    window.print();
+    document.body.innerHTML = originalContents;
+    location.reload(); // Reload page to restore original content
+}
