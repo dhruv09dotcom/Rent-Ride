@@ -657,7 +657,7 @@ body {
 /*---------- Manage Vehicle Section ----------*/
 /*============================================*/
 
-.vehicle-content {
+.mg-vehicle-content {
     flex: 1;
     padding: 12px;
     background: white;
@@ -665,37 +665,37 @@ body {
     border-radius: 5px;
 }
 
-.vehicle-content h2 {
+.mg-vehicle-content h2 {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-.vehicle-container {
+.mg-vehicle-container {
     padding: 20px;
     border-radius: 8px;
 }
 
-.vehicle-container table {
+.mg-vehicle-container table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.vehicle-container table thead {
+.mg-vehicle-container table thead {
     background: #f8f8f8;
 }
 
-.vehicle-container table th, .vehicle-container table td {
+.mg-vehicle-container table th, .mg-vehicle-container table td {
     padding: 12px;
     text-align: left;
     border: 1px solid #333;
 }
 
-.vehicle-container table td i {
+.mg-vehicle-container table td i {
     margin-right: 8px;
     color: #555;
 }
 
-.vehicle-container table td a:hover i {
+.mg-vehicle-container table td a:hover i {
     color: #000;
 }
 
@@ -741,8 +741,13 @@ body {
     color: #555;
 }
 
-.new-booking-container table td a:hover i {
+.new-booking-container table td a{
+    color: #ff1100;
+    text-decoration: none;
+}
+.new-booking-container table td a:hover {
     color: #000;
+    font-weight: bold;
 }
 
 /*=============================================*/
@@ -787,8 +792,14 @@ body {
     color: #555;
 }
 
-.confirm-booking-container table td a:hover i {
+.confirm-booking-container table td a{
+    color: #ff1100;
+    text-decoration: none;
+}
+
+.confirm-booking-container table td a:hover {
     color: #000;
+    font-weight: bold;
 }
 
 /*=============================================*/
@@ -833,8 +844,14 @@ body {
     color: #555;
 }
 
-.cancelled-booking-container table td a:hover i {
+.cancelled-booking-container table td a{
+    color: #ff1100;
+    text-decoration: none;
+}
+
+.cancelled-booking-container table td a:hover {
     color: #000;
+    font-weight: bold;
 }
 
 /*====================================================*/
@@ -907,6 +924,58 @@ body {
 /*---------- Registered Users Section ----------*/
 /*==============================================*/
 
+.cu-content {
+    flex: 1;
+    padding: 12px;
+    background: white;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.cu-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.cu-container {
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.cu-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cu-container table thead {
+    background: #f8f8f8;
+}
+
+.cu-container table th, .cu-container table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #333;
+}
+
+.cu-container table td i {
+    margin-right: 8px;
+    color: #555;
+}
+
+.cu-container table td a{
+    color: #ff1100;
+    text-decoration: none;
+}
+
+.cu-container table td a:hover {
+    color: #000;
+    font-weight: bold;
+}
+
+/*==============================================*/
+/*---------- Registered Users Section ----------*/
+/*==============================================*/
+
 .ru-content {
     flex: 1;
     padding: 12px;
@@ -971,6 +1040,10 @@ body {
     color: red;
     font-weight: 600;
     margin-bottom: 10px;
+}
+
+.booking-info h3 span{
+    color:blue;
 }
 
 .details-table {
