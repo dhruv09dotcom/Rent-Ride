@@ -1,0 +1,64 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" version="26.1.0">
+  <diagram name="Page-1" id="H23NMzCl6urx-HPuUeIu">
+    <mxGraphModel dx="2261" dy="1907" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="User" style="umlLifeline" parent="1" vertex="1">
+          <mxGeometry x="40" y="60" width="120" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="System" style="umlLifeline" parent="1" vertex="1">
+          <mxGeometry x="300" y="60" width="120" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Login()" style="umlMessage" parent="1" source="2" target="3" vertex="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Register()" style="umlMessage" parent="1" source="2" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Search Vehicle()" style="umlMessage" parent="1" source="2" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Select Vehicle()" style="umlMessage" parent="1" source="2" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Order Vehicle()" style="umlMessage" parent="1" source="2" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Print Invoice()" style="umlMessage" parent="1" source="2" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Logout()" style="umlMessage" parent="1" source="2" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Admin" style="umlLifeline" parent="1" edge="1">
+          <mxGeometry x="600" y="60" width="120" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="Admin Login()" style="umlMessage" parent="1" source="11" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="Access Dashboard()" style="umlMessage" parent="1" source="11" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="Manage Brands()" style="umlMessage" parent="1" source="11" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="Manage Vehicles()" style="umlMessage" parent="1" source="11" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="Manage Bookings()" style="umlMessage" parent="1" source="11" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="View Users()" style="umlMessage" parent="1" source="11" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="Manage Contact Queries()" style="umlMessage" parent="1" source="11" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="Logout()" style="umlMessage" parent="1" source="11" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
