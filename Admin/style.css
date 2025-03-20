@@ -161,7 +161,7 @@ body {
 }
 .sidebar {
     max-width: 230px;
-    height: 130vh;
+    height: 162vh;
     background: #34495e;
     overflow-y: auto;
 }
@@ -273,7 +273,7 @@ body {
     margin-bottom: 5px;
 }
 .input-group input {
-    width: 97.5%;
+    width: 95%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
@@ -302,7 +302,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    width: 100%;
+    width: 86%;
 }
 
 .dashboard h2 {
@@ -371,7 +371,6 @@ body {
     flex: 1;
     padding: 12px;
     max-width: 900px;
-    background: white;
     margin-left: 10px;
     border-radius: 5px;
 }
@@ -428,7 +427,6 @@ body {
 .table-content {
     flex: 1;
     padding: 12px;
-    background: white;
     margin-left: 10px;
     border-radius: 5px;
 }
@@ -555,8 +553,7 @@ body {
 }
 
 /* Upload Images Section */
-.vehicle-image {
-    padding: 20px;
+.vehicle-image{
     border-radius: 10px;
 }
 
@@ -567,14 +564,14 @@ body {
 }
 
 .image-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
 .image-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 20px;
 }
 
@@ -599,7 +596,7 @@ body {
 
 /* Accessories Section */
 .accessories-section {
-    padding: 15px;
+    padding-top: 25px;
 }
 
 .accessories-heading h3 {
@@ -611,6 +608,7 @@ body {
 .accessories-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     padding: 10px 0;
 }
@@ -649,7 +647,16 @@ body {
     cursor: pointer;
 }
 
-.cancel:hover, .save:hover {
+.update {
+    background: #1e4b78;
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel:hover, .save:hover, .update:hover {
     opacity: 0.8;
 }
 
@@ -660,7 +667,6 @@ body {
 .mg-vehicle-content {
     flex: 1;
     padding: 12px;
-    background: white;
     margin-left: 10px;
     border-radius: 5px;
 }
@@ -706,7 +712,6 @@ body {
 .new-booking-content {
     flex: 1;
     padding: 12px;
-    background: white;
     margin-left: 10px;
     border-radius: 5px;
 }
@@ -757,7 +762,6 @@ body {
 .confirm-booking-content {
     flex: 1;
     padding: 12px;
-    background: white;
     margin-left: 10px;
     border-radius: 5px;
 }
@@ -809,7 +813,6 @@ body {
 .cancelled-booking-content {
     flex: 1;
     padding: 12px;
-    background: white;
     margin-left: 10px;
     border-radius: 5px;
 }
@@ -862,7 +865,6 @@ body {
     flex: 1;
     padding: 12px;
     max-width: 900px;
-    background: white;
     margin-left: 10px;
     border-radius: 5px;
 }
@@ -920,14 +922,13 @@ body {
     background: #002752;
 }
 
-/*==============================================*/
-/*---------- Registered Users Section ----------*/
-/*==============================================*/
+/*========================================*/
+/*---------- Contact-Us Section ----------*/
+/*========================================*/
 
 .cu-content {
     flex: 1;
     padding: 12px;
-    background: white;
     margin-left: 10px;
     border-radius: 5px;
 }
@@ -979,7 +980,6 @@ body {
 .ru-content {
     flex: 1;
     padding: 12px;
-    background: white;
     margin-left: 10px;
     border-radius: 5px;
 }
@@ -1007,6 +1007,28 @@ body {
     padding: 12px;
     text-align: left;
     border: 1px solid #333;
+}
+
+td.icon {
+    text-align: center;
+    vertical-align: middle;
+}
+
+td.icon a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+td.icon i {
+    font-size: 20px;
+    color: red;
+    transition: color 0.3s ease;
+}
+
+td.icon a:hover i {
+    color: darkred;
 }
 
 .ru-container table td i {
@@ -1097,4 +1119,175 @@ body {
 .cancel-btn {
     background: #dc3545;
     color: white;
+}
+
+/*===============================================*/
+/*---------- Update Contact-Us Section ----------*/
+/*===============================================*/
+
+.update-cui {
+    flex: 1;
+    padding: 12px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.update-cui h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.update-cui-container {
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.update-cui form {
+    display: flex;
+    flex-direction: column;
+}
+
+.update-cui label {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.update-cui textarea,
+.update-cui input {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 98%;
+}
+
+.update-cui textarea {
+    resize: none;
+    height: 80px;
+}
+
+.update-cui input:focus,
+.update-cui textarea:focus {
+    border-color: #007bff;
+}
+
+.update-cui button {
+    width: 150px;
+    background: #004085;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.update-cui button:hover {
+    background: #002752;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .update-cui {
+        width: 90%;
+    }
+}
+
+/*================================================*/
+/*---------- Contact-Us Queries Section ----------*/
+/*================================================*/
+
+.tblcontact {
+    flex: 1;
+    padding: 12px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.tblcontact h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.tblcontainer {
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.tblcontainer table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tblcontainer table thead {
+    background: #f8f8f8;
+}
+
+.tblcontainer table th, .tblcontainer table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #333;
+}
+
+.tblcontainer table td i {
+    margin-right: 8px;
+    color: #555;
+}
+
+.tblcontainer table td a:hover i {
+    color: #000;
+}
+
+/* Align specific columns (Status & Action) to center */
+.tblcontainer table td:nth-child(6), /* Status Column */
+.tblcontainer table td:nth-child(7) { /* Action Column */
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Status Badge Styling */
+.status {
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    width: 80px; /* Set a fixed width for uniformity */
+}
+
+/* Unread Status */
+.status.unread {
+    background-color: red;
+    color: white;
+}
+
+/* Read Status */
+.status.read {
+    background-color: green;
+    color: white;
+}
+
+/* Read Button Styling */
+.btn-read {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px; /* Increased width for better UI */
+    height: 40px;
+    font-weight: 600;
+    background: #004085;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Disabled Read Button */
+.btn-read:disabled {
+    background-color: gray;
+    cursor: not-allowed;
 }

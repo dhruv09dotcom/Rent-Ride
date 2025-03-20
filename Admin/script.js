@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-//==================// 
+//==================//
 // Sidebar Dropdown //
 //==================//
 document.addEventListener("DOMContentLoaded", function () {
@@ -41,3 +41,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+//==================//
+// Registered Users //
+//==================//
+
+function confirmDelete(id) {
+    if (confirm("Are you sure you want to delete this user?")) {
+        window.location.href = 'registered-users.php?delete=' + id;
+    }
+}
