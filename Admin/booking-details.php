@@ -82,12 +82,12 @@ if (isset($_GET['id'])) {
                                 <tr>
                                     <th>Address</th>
                                     <td><?php echo $address; ?></td>
-                                    <th>Area</th>
-                                    <td><?php echo $area; ?></td>
+                                    <th>Pincode</th>
+                                    <td><?php echo $pincode; ?></td>
                                 </tr>
                                 <tr>
-                                    <th>City</th>
-                                    <td><?php echo $city; ?></td>
+                                    <th>State</th>
+                                    <td><?php echo $state; ?></td>
                                     <th>Booking Date</th>
                                     <td><?php echo $created_at; ?></td>
                                 </tr>
@@ -131,7 +131,7 @@ if (isset($_GET['id'])) {
                                     $stmt = $pdo->prepare($update_status);
                                     $stmt->bindParam(':booking_id', $booking_id, PDO::PARAM_INT);
                                     $stmt->execute();
-                                    echo "<script>alert('Booking status updated successfully!'); window.location.href='dashboard.php';</script>";
+                                    echo "<script>alert('Booking status updated successfully!'); window.location.href='total-booking.php';</script>";
                                     exit();
                                 } catch (PDOException $e) {
                                     echo "<script>alert('Error updating booking status!');</script>";

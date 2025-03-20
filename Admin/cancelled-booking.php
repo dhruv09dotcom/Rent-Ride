@@ -5,7 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 include "connection.php"; // Include database connection file
 
 try {
-    // Fetch only cancelled bookings
+    // Fetch only cancelled bookings with consistent status handling
     $sql = "SELECT b.booking_number, b.from_date, b.to_date, 
                    b.status, b.created_at AS posting_date, 
                    v.vehicle_title AS vehicle, 
@@ -22,6 +22,7 @@ try {
     die("Database error occurred.");
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

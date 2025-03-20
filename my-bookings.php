@@ -1,25 +1,20 @@
 <?php 
-// Start session only if it's not already started
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-include 'include/config.php'; // Database connection
+include 'include/config.php'; // Ensure database connection consistency
 
-// Ensure user is logged in
 if (!isset($_SESSION['email']) || empty($_SESSION['email'])) {
     header("Location: login.php");
     exit();
 }
 
-// Retrieve email from session
 $user_email = $_SESSION['email'];
 
-// Handle booking cancellation
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['cancel_booking'])) {
     $booking_id = $_POST['booking_id'];
 
-    // Check if booking exists and fetch status
     $check_status = $dbh->prepare("SELECT status FROM bookings WHERE id = :booking_id");
     $check_status->bindParam(':booking_id', $booking_id, PDO::PARAM_INT);
     $check_status->execute();
@@ -30,27 +25,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['cancel_booking'])) {
         exit();
     }
 
-    if ($status !== "Canceled") {
-        // Update booking status to "Canceled"
-        $cancel_booking = $dbh->prepare("UPDATE bookings SET status = 'Canceled' WHERE id = :booking_id");
+    if (strtolower($status) !== "cancelled") { // Ensure case consistency
+        $cancel_booking = $dbh->prepare("UPDATE bookings SET status = 'cancelled' WHERE id = :booking_id");
         $cancel_booking->bindParam(':booking_id', $booking_id, PDO::PARAM_INT);
         if ($cancel_booking->execute()) {
-            echo "<script>alert('Booking canceled successfully.'); window.location.href='my-bookings.php';</script>";
+            echo "<script>alert('Booking cancelled successfully.'); window.location.href='my-bookings.php';</script>";
             exit();
         } else {
             echo "<script>alert('Failed to cancel booking. Please try again.');</script>";
         }
     } else {
-        echo "<script>alert('This booking is already canceled.');</script>";
+        echo "<script>alert('This booking is already cancelled.');</script>";
     }
 }
 
-// Define pagination variables
-$limit = 1; // Number of bookings per page
+// Pagination settings
+$limit = 1; // Adjust the limit if needed
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $offset = ($page - 1) * $limit;
 
-// Fetch total number of bookings for pagination
+// Fetch total records
 $query_total = "SELECT COUNT(*) FROM bookings WHERE user_id = (SELECT id FROM users WHERE email = :email)";
 $stmt_total = $dbh->prepare($query_total);
 $stmt_total->bindParam(':email', $user_email, PDO::PARAM_STR);
@@ -58,7 +52,7 @@ $stmt_total->execute();
 $total_records = $stmt_total->fetchColumn();
 $total_pages = ceil($total_records / $limit);
 
-// Fetch paginated user bookings along with vehicle details
+// Fetch paginated bookings
 $query = "SELECT 
         b.id AS booking_id, 
         b.booking_number, 
@@ -77,8 +71,8 @@ $query = "SELECT
 
 $stmt = $dbh->prepare($query);
 $stmt->bindParam(':email', $user_email, PDO::PARAM_STR);
-$stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
-$stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+$stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
+$stmt->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
 $stmt->execute();
 $bookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -199,11 +193,20 @@ $bookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <script>
             function printInvoice(bookingId) {
                 var invoice = document.getElementById("invoice-" + bookingId);
-                var originalContent = document.body.innerHTML;
-                document.body.innerHTML = invoice.innerHTML;
-                window.print();
-                document.body.innerHTML = originalContent;
-                window.location.reload();
+                if (invoice) {
+                    var printContent = invoice.innerHTML;
+                    var originalContent = document.body.innerHTML;
+
+                    // Replace the body content with invoice content
+                    document.body.innerHTML = printContent;
+                    window.print();
+
+                    // Restore original page content after printing
+                    document.body.innerHTML = originalContent;
+                    location.reload(); // Reload the page to restore events
+                } else {
+                    alert("Invoice not found.");
+                }
             }
         </script>
         <!-- Include Footer -->

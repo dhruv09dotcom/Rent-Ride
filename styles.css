@@ -1707,44 +1707,56 @@ footer {
     text-align: center;
     width: 120px;
 }
-/* Invoice Section */
-.invoice-heading {
-    color: blue;
-    font-size: 22px;
+/* Invoice Styling */
+.invoice-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.invoice-header {
+    text-align: center;
     margin-bottom: 10px;
 }
+
+.invoice-header h2 {
+    color: #333;
+}
+
+.admin-details, .user-details, .vehicle-details {
+    padding: 10px 0;
+}
+
+.invoice-car-image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
 .invoice-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
-    background: white;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
+
 .invoice-table th, .invoice-table td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 10px;
     text-align: center;
 }
-.invoice-table .MB {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align:end;
-}
+
 .invoice-table th {
-    background-color: #f8f8f8;
-    font-weight: bold;
+    background: #f4f4f4;
 }
-.invoice-table tfoot td {
-    font-weight: bold;
-    background-color: #e9ecef;
-}
+
 /* ---------- Booking Cancellation Section ---------- */
-.cancel-booking {
-    text-align: center;
-    margin-top: 15px;
-}
 .cancel-button {
     display: flex;
     width:100px;
@@ -1763,10 +1775,6 @@ footer {
 }
 
 /* ---------- Print Invoice Section ---------- */
-.print-invoice {
-    text-align: center;
-    margin-top: 15px;
-}
 .print-button {
     display: flex;
     width:100px;
@@ -1788,6 +1796,7 @@ footer {
 .button-container {
     display: flex;
     justify-content: flex-end; /* Align buttons to the right */
+    text-align: center;
     gap: 10px; /* Space between buttons */
     margin-top: 20px;
 }
@@ -1798,6 +1807,23 @@ footer {
     width: auto;
 }
 
+/* Print Styles */
+@media print {
+    .invoice-container {
+        border: none;
+        box-shadow: none;
+        width: 100%;
+    }
+
+    .print-button, .cancel-button {
+        display: none;
+    }
+
+    .invoice-table th, .invoice-table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
 /* ---------- Pagination Container ---------- */
 .pagination {
     display: flex;
