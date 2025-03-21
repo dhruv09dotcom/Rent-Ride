@@ -1,5 +1,5 @@
-CREATE DATABASE car_rent;
-USE car_rent;
+CREATE DATABASE rent_ride;
+USE rent_ride;
 
 -- Admin Table --
 CREATE TABLE Admin (
