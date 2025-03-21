@@ -1,7 +1,7 @@
 <?php
 // Database configuration
 $host = 'localhost';
-$dbname = 'car_rent'; // Change this to your database name
+$dbname = 'rent_ride'; // Change this to your database name
 $username = 'root';  // Change if using a different MySQL user
 $password = ''; // Leave empty if no password
 

@@ -134,12 +134,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <div class="signup-terms">
                     <input type="checkbox" id="terms" required />
-                    <label for="terms">I agree to the <a href="#">Terms & Conditions</a></label>
+                    <label for="terms">I agree to the <a href="terms.php">Terms & Conditions</a></label>
                 </div>
 
                 <button type="submit" class="Button">Sign Up</button>
                 <p class="signin-link">Already have an account? <a href="login.php">Log in</a></p>
             </form>
+            <?php
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    if (!isset($_POST["terms"])) {
+                        echo "<p class='error'>You must agree to the Terms & Conditions to register.</p>";
+                    } else {
+                        echo "<p>Registration successful! (Proceed with database insertion)</p>";
+                        // Here, you would normally insert user data into the database
+                    }
+                }
+            ?>
             </div>
         </section>
 

@@ -1073,6 +1073,86 @@ button:hover {
     margin-right: 10px;
 }
 
+/*=======================================*/
+/*---------- Terms & Condition ----------*/
+/*=======================================*/
+/* Terms Container */
+.terms-container {
+    max-width: 850px;
+    background: white;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+.terms-container h2 {
+    text-align: center;
+    color: #0F172A;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.terms-container h3 {
+    color: #000;
+    margin-top: 20px;
+}
+
+/* Paragraph Styling */
+.terms-container p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* List Styling */
+.terms-container ul {
+    padding-left: 20px;
+}
+
+.terms-container ul li {
+    margin-bottom: 8px;
+}
+
+/* Back to Registration Button */
+.terms-btn {
+    display: block;
+    background: linear-gradient(135deg, #0F172A, #1E3A8A);
+    color: white;
+    width: 250px;
+    padding: 12px 25px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 30px auto;
+    transition: 0.3s;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.terms-btn:hover {
+    background: linear-gradient(135deg, #ff0011, #e0000f);
+    transform: scale(1.05);
+}
+
+.a{
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .terms-container {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .terms-btn {
+        width: 100%;
+    }
+}
+
 /*========================================*/
 /*---------- Contact-Us Section ----------*/
 /*========================================*/

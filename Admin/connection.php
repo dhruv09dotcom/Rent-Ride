@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = ""; // Keep empty if no password
-$database = "car_rent";
+$database = "rent_ride";
 
 try {
     $pdo = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
