@@ -25,34 +25,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    // Check if email already exists
-    $stmt = $conn->prepare("SELECT email FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $stmt->store_result();
+    try {
+        // Check if email already exists
+        $stmt = $dbh->prepare("SELECT email FROM users WHERE email = ?");
+        $stmt->execute([$email]);
 
-    if ($stmt->num_rows > 0) {
-        $_SESSION['error'] = "Email already exists!";
-        header("Location: register.php");
-        exit();
+        if ($stmt->rowCount() > 0) {
+            echo "<script>
+                    alert('Email already exists! Please try a different one.');
+                    window.location.href = 'register.php';
+                  </script>";
+            exit();
+        }
+
+        // Insert new user into the database
+        $stmt = $dbh->prepare("INSERT INTO users (first_name, last_name, email, phone, address, pincode, state, password) 
+                                VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        if ($stmt->execute([$first_name, $last_name, $email, $phone, $address, $pincode, $state, $password])) {
+            echo "<script>
+                    alert('Registration successful! Please log in.');
+                    window.location.href = 'login.php';
+                  </script>";
+            exit();
+        } else {
+            echo "<script>
+                    alert('Registration failed. Please try again.');
+                  </script>";
+        }
+    } catch (PDOException $e) {
+        echo "<script>
+                alert('Error: " . $e->getMessage() . "');
+              </script>";
     }
-
-    // Insert new user into the database
-    $stmt = $conn->prepare("INSERT INTO users (first_name, last_name, email, phone, address, pincode, state, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssssss", $first_name, $last_name, $email, $phone, $address, $pincode, $state, $password);
-
-    if ($stmt->execute()) {
-        echo "<script>
-                alert('Registration successful! Please log in.');
-                window.location.href = 'login.php';
-              </script>";
-        exit();
-    } else {
-        echo "<script>
-                alert('Registration failed. Error: " . $stmt->error . "');
-              </script>";
-        exit();
-    }    
 }
 ?>
 
@@ -79,77 +83,67 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- Register Section --> 
         <section class="signup-section">
             <div class="signup-form">
-            <form action="register.php" method="POST">
-                <h3>Sign Up</h3>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="firstname">First Name</label>
-                        <input type="text" id="firstname" name="firstname" placeholder="Enter first name" required />
+                <form action="register.php" method="POST">
+                    <h3>Sign Up</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstname">First Name</label>
+                            <input type="text" id="firstname" name="firstname" placeholder="Enter first name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" id="lastname" name="lastname" placeholder="Enter last name" required />
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="lastname">Last Name</label>
-                        <input type="text" id="lastname" name="lastname" placeholder="Enter last name" required />
-                    </div>
-                </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Enter email address" required />
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Enter email address" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required />
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required />
-                    </div>
-                </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="address">Your Address</label>
-                        <textarea id="address" name="address" placeholder="Enter address" rows="3"></textarea>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="address">Your Address</label>
+                            <textarea id="address" name="address" placeholder="Enter address" rows="3"></textarea>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="pincode">Pincode</label>
-                        <input type="text" id="pincode" name="pincode" placeholder="Enter pincode" required>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pincode">Pincode</label>
+                            <input type="text" id="pincode" name="pincode" placeholder="Enter pincode" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <input type="text" id="state" name="state" placeholder="Enter state" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="state">State</label>
-                        <input type="text" id="state" name="state" placeholder="Enter state" required>
-                    </div>
-                </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Create a password" required />
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Create a password" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm_password">Confirm Password</label>
+                            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required />
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="confirm_password">Confirm Password</label>
-                        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required />
+
+                    <div class="signup-terms">
+                        <input type="checkbox" id="terms" required />
+                        <label for="terms">I agree to the <a href="#">Terms & Conditions</a></label>
                     </div>
-                </div>
 
-                <div class="signup-terms">
-                    <input type="checkbox" id="terms" required />
-                    <label for="terms">I agree to the <a href="terms.php">Terms & Conditions</a></label>
-                </div>
-
-                <button type="submit" class="Button">Sign Up</button>
-                <p class="signin-link">Already have an account? <a href="login.php">Log in</a></p>
-            </form>
-            <?php
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    if (!isset($_POST["terms"])) {
-                        echo "<p class='error'>You must agree to the Terms & Conditions to register.</p>";
-                    } else {
-                        echo "<p>Registration successful! (Proceed with database insertion)</p>";
-                        // Here, you would normally insert user data into the database
-                    }
-                }
-            ?>
+                    <button type="submit" class="Button">Sign Up</button>
+                    <p class="signin-link">Already have an account? <a href="login.php">Log in</a></p>
+                </form>
             </div>
         </section>
 

@@ -23,7 +23,9 @@ CREATE TABLE users (
     pincode VARCHAR(10) NOT NULL
     state VARCHAR(100) NOT NULL
     password VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    reset_token VARCHAR(100) NULL,
+    token_expiry DATETIME NULL
 );
 
 -- Brands Table --

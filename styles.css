@@ -799,18 +799,19 @@ button:hover {
     font-weight: 700;
 }
 
-/*=============================================*/
-/*---------- Forgot Password Section ----------*/
-/*=============================================*/
+/*=====================================================*/
+/*---------- Forgot & Reset Password Section ----------*/
+/*=====================================================*/
 
-.forgot-password {
+.forgot-password, .reset-password {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 70vh;
     padding-top: 20px;
     background-color: #f4f4f4;
 }
-.forgot-container {
+.forgot-container, .reset-container {
     background: #fff;
     padding: 30px;
     border-radius: 10px;
@@ -818,7 +819,7 @@ button:hover {
     text-align: center;
     width: 350px;
 }
-.forgot-container h2 {
+.forgot-container, .reset-container h2 {
     font-size: 24px;
     margin-bottom: 10px;
 }

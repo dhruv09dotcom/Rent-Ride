@@ -141,19 +141,29 @@ $bookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <?php echo htmlspecialchars($booking['status']); ?>
                             </div>
                         </div>
-                        
+
                         <div class="button-container">
                             <form method="POST" action="my-bookings.php">
                                 <input type="hidden" name="booking_id" value="<?php echo $booking['booking_id']; ?>">
-                                <button type="submit" name="cancel_booking" class="cancel-button">Cancel Booking</button>
-                                <button type="button" class="print-button" onclick="redirectToInvoice(<?php echo $booking['booking_id']; ?>)">View Invoice</button>
-                                <script>
-                                    function redirectToInvoice(bookingId) {
-                                        window.location.href = 'invoice.php?booking_id=' + bookingId;
-                                    }
-                                </script>
+                                <button type="submit" name="cancel_booking" class="cancel-button" onclick="removeInvoiceButton(<?php echo $booking['booking_id']; ?>)">Cancel Booking</button>
+                                <?php if ($booking['status'] == 'confirmed'): ?>
+                                    <button type="button" id="invoice-btn-<?php echo $booking['booking_id']; ?>" class="print-button" onclick="redirectToInvoice(<?php echo $booking['booking_id']; ?>)">View Invoice</button>
+                                <?php endif; ?>
                             </form>
                         </div>
+
+                        <script>
+                            function redirectToInvoice(bookingId) {
+                                window.location.href = 'invoice.php?booking_id=' + bookingId;
+                            }
+
+                            function removeInvoiceButton(bookingId) {
+                                let invoiceButton = document.getElementById('invoice-btn-' + bookingId);
+                                if (invoiceButton) {
+                                    invoiceButton.remove();
+                                }
+                            }
+                        </script>
                     <?php endforeach; ?>
                 <?php else: ?>
                     <p>No bookings found.</p>

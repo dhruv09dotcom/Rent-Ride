@@ -1,3 +1,65 @@
+<?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/autoload.php'; // Include Composer's autoload file
+include 'include/config.php'; // Database connection
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = trim($_POST['email']);
+
+    try {
+        // Check if email exists in the database
+        $stmt = $dbh->prepare("SELECT * FROM users WHERE email = :email");
+        $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user) {
+            $token = bin2hex(random_bytes(50)); // Generate secure token
+            $expiry = date("Y-m-d H:i:s", strtotime("+30 minutes"));// Token expiry
+
+            // Store token in the database
+            $updateStmt = $dbh->prepare("UPDATE users SET reset_token = :token, token_expiry = :expiry WHERE email = :email");
+            $updateStmt->bindParam(":token", $token, PDO::PARAM_STR);
+            $updateStmt->bindParam(":expiry", $expiry, PDO::PARAM_STR);
+            $updateStmt->bindParam(":email", $email, PDO::PARAM_STR);
+            $updateStmt->execute();
+
+            // Send Reset Email using PHPMailer
+            $mail = new PHPMailer(true);
+
+            try {
+                // SMTP Configuration
+                $mail->isSMTP();
+                $mail->Host = 'smtp.gmail.com'; // SMTP provider
+                $mail->SMTPAuth = true;
+                $mail->Username = 'rathvadhruv3@gmail.com'; // Your email
+                $mail->Password = 'isiw kslo bzwg qbyv'; // Google App Password
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $mail->Port = 587;
+
+                // Email Content
+                $mail->setFrom('rathvadhruv3@gmail.com', 'Rent Ride Support');
+                $mail->addAddress($email);
+                $mail->Subject = "Password Reset Request";
+                $encodedURL = "http://localhost/Rent%20Ride/reset-pwd.php?token=" . $token;
+                $mail->Body = "Click the link below to reset your password:\n\n" . $encodedURL;
+                
+                $mail->send();
+
+            } catch (Exception $e) {
+                echo "<p style='color: red;'>Email sending failed: {$mail->ErrorInfo}</p>";
+            }
+        } else {
+            echo "<p style='color: red;'>Email not found!</p>";
+        }
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -23,18 +85,12 @@
         <section class="forgot-password">
             <div class="forgot-container">
                 <h2>Forgot Password</h2>
-                <p>Enter your registered email to reset your password.</p>
-                <form action="forgot-password.php" method="POST">
+                <p>Enter your registered email to receive a password reset link.</p>
+                <form method="POST">
                     <div class="input-group">
                         <input type="email" name="email" placeholder="Enter your email" required>
                     </div>
-                    <div class="input-group">
-                        <input type="password" id="password" placeholder="Enter new password" required />
-                    </div>
-                    <div class="input-group">
-                        <input type="password" id="password" placeholder="Conform new password" required />
-                    </div>
-                    <button type="submit" class="btn-reset">Reset Password</button>
+                    <button type="submit" class="btn-reset">Send Reset Link</button>
                 </form>
                 <p class="back-to-login"><a href="login.php">Back to Login</a></p>
             </div>
