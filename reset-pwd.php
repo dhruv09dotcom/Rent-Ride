@@ -5,8 +5,8 @@ if (isset($_GET['token'])) {
     $token = $_GET['token'];
 
     try {
-        // Validate token
-        $stmt = $dbh->prepare("SELECT * FROM users WHERE reset_token = :token AND token_expiry >= NOW()");
+        // Validate token (without expiry check)
+        $stmt = $dbh->prepare("SELECT * FROM users WHERE reset_token = :token");
         $stmt->bindParam(":token", $token, PDO::PARAM_STR);
         $stmt->execute();
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -18,18 +18,20 @@ if (isset($_GET['token'])) {
 
                 if ($new_password === $confirm_password) {
                     // Update password in database and remove token
-                    $updateStmt = $dbh->prepare("UPDATE users SET password = :password, reset_token = NULL, token_expiry = NULL WHERE email = :email");
+                    $updateStmt = $dbh->prepare("UPDATE users SET password = :password, reset_token = NULL WHERE email = :email");
                     $updateStmt->bindParam(":password", $new_password, PDO::PARAM_STR);
                     $updateStmt->bindParam(":email", $user['email'], PDO::PARAM_STR);
                     $updateStmt->execute();
 
-                    echo "<p style='color: green;'>Password updated successfully. <a href='login.php'>Login</a></p>";
+                    // Redirect to login page after successful reset
+                    header("Location: login.php");
+                    exit(); // Ensure script stops execution after redirection
                 } else {
                     echo "<p style='color: red;'>Passwords do not match!</p>";
                 }
             }
-        } else if (!$user) {
-            echo "❌ Invalid or expired token!";
+        } else {
+            echo "❌ Invalid token!";
             exit();
         }
     } catch (PDOException $e) {

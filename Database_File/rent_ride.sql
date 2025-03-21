@@ -3,13 +3,13 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2025 at 07:09 AM
+-- Generation Time: Mar 21, 2025 at 05:53 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-SET time_zone = "+05:30";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`, `updated_at`) VALUES
-(1, 'Admin', 'admin@123', '2025-03-18 09:02:10');
+(1, 'Admin', 'admin@123', '2025-03-18 03:32:10');
 
 -- --------------------------------------------------------
 
@@ -60,14 +60,6 @@ CREATE TABLE `bookings` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `bookings`
---
-
-INSERT INTO `bookings` (`id`, `booking_number`, `user_id`, `email`, `vehicle_id`, `from_date`, `to_date`, `message`, `status`, `created_at`) VALUES
-(1, '985887319', 1, 'test@gmail.com', 8, '2025-03-20', '2025-03-22', 'Accpet my booking asap!', 'confirmed', '2025-03-20 09:57:54'),
-(2, '490419718', 1, 'test@gmail.com', 1, '2025-03-20', '2025-03-22', 'Booking for business visit!', 'cancelled', '2025-03-20 17:46:55');
-
 -- --------------------------------------------------------
 
 --
@@ -86,11 +78,11 @@ CREATE TABLE `brands` (
 --
 
 INSERT INTO `brands` (`id`, `brand_name`, `created_at`, `updated_at`) VALUES
-(1, 'Tata', '2025-03-16 13:27:23', '2025-03-16 13:31:32'),
-(2, 'Honda', '2025-03-17 11:36:36', '2025-03-17 11:36:36'),
-(3, 'Toyota', '2025-03-17 11:36:55', '2025-03-17 11:36:55'),
-(4, 'Hyundai', '2025-03-17 11:37:05', '2025-03-17 11:37:05'),
-(5, 'Maruti', '2025-03-17 11:37:15', '2025-03-17 11:37:15');
+(1, 'Tata', '2025-03-16 07:57:23', '2025-03-16 08:01:32'),
+(2, 'Honda', '2025-03-17 06:06:36', '2025-03-17 06:06:36'),
+(3, 'Toyota', '2025-03-17 06:06:55', '2025-03-17 06:06:55'),
+(4, 'Hyundai', '2025-03-17 06:07:05', '2025-03-17 06:07:05'),
+(5, 'Maruti', '2025-03-17 06:07:15', '2025-03-17 06:07:15');
 
 -- --------------------------------------------------------
 
@@ -132,7 +124,7 @@ CREATE TABLE `contact_queries` (
 --
 
 INSERT INTO `contact_queries` (`id`, `full_name`, `email`, `message`, `created_at`, `status`) VALUES
-(1, 'Test Project', 'test@gmail.com', 'Hello Admin !', '2025-03-19 09:33:12', 'Read');
+(1, 'Test Project', 'test@gmail.com', 'Hello Admin !', '2025-03-19 04:03:12', 'Read');
 
 -- --------------------------------------------------------
 
@@ -150,15 +142,17 @@ CREATE TABLE `users` (
   `pincode` varchar(10) NOT NULL,
   `state` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `reset_token` varchar(100) DEFAULT NULL,
+  `token_expiry` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `phone`, `address`, `pincode`, `state`, `password`, `created_at`) VALUES
-(1, 'Test', 'Project', 'test@gmail.com', '9876543210', 'Building A, [6th Floor/603], Courtyard Trilogy, Bhayli, Vadodara.', '391410', 'Gujarat', 'test@123', '2025-03-18 15:09:29');
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `phone`, `address`, `pincode`, `state`, `password`, `created_at`, `reset_token`, `token_expiry`) VALUES
+(1, 'Test', 'Project', 'rathvadhruv3@gmail.com', '98741 23650', 'Flat No. 603, 6th Floor, Tower A, Courtyard Trilogy, Bhayli, Vadodara.', '391410', 'Gujarat', 'test@123', '2025-03-21 16:49:48', 'efd5556ef5723087224a9ef61dc5014702085ddf62cb61bc8dbfd1b5bd367461c9c7337f23381cb36e010c9cee1ae8408750', '2025-03-21 18:22:02');
 
 -- --------------------------------------------------------
 
@@ -202,15 +196,15 @@ CREATE TABLE `vehicles` (
 --
 
 INSERT INTO `vehicles` (`id`, `vehicle_title`, `brand_id`, `vehicle_overview`, `price_per_day`, `fuel_type`, `model_year`, `seating_capacity`, `image1`, `image2`, `image3`, `image4`, `image5`, `image6`, `air_conditioner`, `power_steering`, `cd_player`, `power_door_locks`, `driver_airbag`, `central_locking`, `antilock_braking_system`, `passenger_airbag`, `crash_sensor`, `brake_assist`, `power_windows`, `leather_seats`, `created_at`, `updated_at`) VALUES
-(1, 'Honda City', 2, 'The Honda City has 1 Petrol Engine on offer. The Petrol engine is 1498 cc . It is available with Manual & Automatic transmission.Depending upon the variant and fuel type the City has a mileage of 17.8 to 18.4 kmpl. The City is a 5 seater 4 cylinder car and has length of 4583 mm, width of 1748 mm and a wheelbase of 2600 mm.', 1200.00, 'Petrol', '2024', 5, '1742211677_Honda City 2024 1.jpg', '1742211677_Honda City 2024 2.jpg', '1742211677_Honda City 2024 3.jpg', '1742211677_Honda City 2024 4.jpeg', '1742211677_Honda City 2024 5.jpeg', '1742211677_Honda City 2024 6.jpg', 1, 1, 1, 0, 1, 1, '1', 1, 0, 0, 1, 1, '2025-03-17 11:41:17', '2025-03-17 11:41:17'),
-(2, 'Honda Amaze', 2, 'The Honda Amaze has 1 Petrol Engine on offer. The Petrol engine is 1199 cc . It is available with Manual & Automatic transmission.Depending upon the variant and fuel type the Amaze has a mileage of 18.65 to 19.46 kmpl & Ground clearance of Amaze is 172 mm. The Amaze is a 5 seater 4 cylinder car and has length of 3995 mm, width of 1733 mm and a wheelbase of 2470 mm.', 1100.00, 'Diesel', '2024', 5, '1742213344_Honda Amaze 2024 1.jpg', '1742213344_Honda Amaze 2024 2.jpg', '1742213344_Honda Amaze 2024 3.jpg', '1742213344_Honda Amaze 2024 4.jpeg', '1742213344_Honda Amaze 2024 5.jpeg', '1742213344_Honda Amaze 2024 6.jpg', 1, 1, 1, 0, 1, 1, '1', 1, 0, 0, 1, 1, '2025-03-17 12:09:04', '2025-03-17 12:09:48'),
-(3, 'Toyota Innova Crysta', 3, 'The Toyota Innova Crysta has 1 Diesel Engine on offer. The Diesel engine is 2393 cc . It is available with Manual transmission.Depending upon the variant and fuel type the Innova Crysta has a mileage of 9 kmpl. The Innova Crysta is a 7 seater 4 cylinder car and has length of 4735 mm, width of 1830 mm and a wheelbase of 2750 mm.', 1800.00, 'Diesel', '2024', 7, '1742213540_Toyota Innova Crysta 2024 1.jpg', '1742213540_Toyota Innova Crysta 2024 2.jpg', '1742213540_Toyota Innova Crysta 2024 3.jpg', '1742213540_Toyota Innova Crysta 2024 4.jpeg', '1742213540_Toyota Innova Crysta 2024 5.jpeg', '1742213540_Toyota Innova Crysta 2024 6.jpg', 1, 1, 1, 1, 1, 1, '1', 1, 1, 1, 1, 1, '2025-03-17 12:12:20', '2025-03-17 16:40:46'),
-(4, 'Hyundai Verna', 4, 'The Hyundai Verna has 2 Petrol Engine on offer. The Petrol engine is 1497 cc and 1482 cc . It is available with Manual & Automatic transmission.Depending upon the variant and fuel type the Verna has a mileage of 18.6 to 20.6 kmpl. The Verna is a 5 seater 4 cylinder car and has length of 4535 mm, width of 1765 mm and a wheelbase of 2670 mm.', 1300.00, 'Petrol', '2024', 5, '1742213764_Hyundai Verna 2024 1.jpg', '1742213764_Hyundai Verna 2024 2.jpg', '1742213764_Hyundai Verna 2024 3.jpg', '1742213764_Hyundai Verna 2024 4.jpeg', '1742213764_Hyundai Verna 2024 5.jpeg', '1742213764_Hyundai Verna 2024 6.jpg', 1, 1, 1, 0, 1, 1, '1', 1, 0, 0, 1, 1, '2025-03-17 12:16:04', '2025-03-17 12:16:04'),
-(5, 'Hyundai i20', 4, 'The Hyundai i20 has 1 Petrol Engine on offer. The Petrol engine is 1197 cc . It is available with Automatic & Manual transmission.Depending upon the variant and fuel type the i20 has a mileage of 16 to 20 kmpl. The i20 is a 5 seater 4 cylinder car and has length of 3995 mm, width of 1775 mm and a wheelbase of 2580 mm.', 1000.00, 'Petrol', '2024', 5, '1742213899_Hyundai I20 2024 1.jpg', '1742213899_Hyundai I20 2024 2.jpg', '1742213899_Hyundai I20 2024 3.jpg', '1742213899_Hyundai I20 2024 4.jpeg', '1742213899_Hyundai I20 2024 5.jpeg', '1742213899_Hyundai I20 2024 6.jpg', 1, 1, 1, 0, 1, 1, '1', 1, 0, 0, 0, 1, '2025-03-17 12:18:19', '2025-03-17 12:18:19'),
-(6, 'Maruti Wagon R', 5, 'The Maruti Wagon R has 2 Petrol Engine and 1 CNG Engine on offer. The Petrol engine is 998 cc and 1197 cc while the CNG engine is 998 cc . It is available with Manual & Automatic transmission.Depending upon the variant and fuel type the Wagon R has a mileage of 23.56 to 25.19 kmpl. The Wagon R is a 5 seater 4 cylinder car and has length of 3655 mm, width of 1620 mm and a wheelbase of 2435 mm.', 700.00, 'CNG', '2024', 5, '1742214012_Maruti Wagon R 2024 1.jpg', '1742214012_Maruti Wagon R 2024 2.jpg', '1742214012_Maruti Wagon R 2024 3.jpg', '1742214012_Maruti Wagon R 2024 4.jpeg', '1742214012_Maruti Wagon R 2024 5.jpeg', '1742214012_Maruti Wagon R 2024 6.jpg', 1, 1, 1, 0, 1, 1, '1', 1, 0, 0, 0, 1, '2025-03-17 12:20:12', '2025-03-17 12:20:12'),
-(7, 'Tata Nexon', 1, 'The Tata Nexon has 1 Diesel Engine, 1 Petrol Engine and 1 CNG Engine on offer. The Diesel engine is 1497 cc, the Petrol engine is 1199 cc while the CNG engine is 1199 cc . It is available with Manual & Automatic transmission.Depending upon the variant and fuel type the Nexon has a mileage of 17.01 to 24.08 kmpl & Ground clearance of Nexon is 208 mm. The Nexon is a 5 seater 4 cylinder car and has length of 3995 mm, width of 1804 mm and a wheelbase of 2498 mm.', 1400.00, 'Diesel', '2024', 5, '1742229466_Tata Nexon 2024 1.jpg', '1742229466_Tata Nexon 2024 2.jpg', '1742229466_Tata Nexon 2024 3.jpg', '1742229466_Tata Nexon 2024 4.jpeg', '1742229466_Tata Nexon 2024 5.jpeg', '1742229466_Tata Nexon 2024 6.jpg', 1, 1, 0, 0, 1, 1, '1', 1, 0, 0, 1, 1, '2025-03-17 16:37:46', '2025-03-17 16:40:27'),
-(8, 'Tata Curvv', 1, 'The Tata Curvv has 1 Diesel Engine and 1 Petrol Engine on offer. The Diesel engine is 1497 cc while the Petrol engine is 1199 cc . It is available with Manual & Automatic transmission.Depending upon the variant and fuel type the Curvv has a mileage of 11 to 15 kmpl & Ground clearance of Curvv is 208 mm. The Curvv is a 5 seater 4 cylinder car and has length of 4308 mm, width of 1810 mm and a wheelbase of 2560 mm.', 1600.00, 'Diesel', '2025', 5, '1742229613_Tata Curvv 2024 1.jpg', '1742229613_Tata Curvv 2024 2.jpg', '1742229613_Tata Curvv 2024 3.jpg', '1742229613_Tata Curvv 2024 4.jpeg', '1742229613_Tata Curvv 2024 5.jpeg', '1742229613_Tata Curvv 2024 6.jpg', 1, 1, 1, 0, 1, 1, '1', 1, 0, 0, 1, 1, '2025-03-17 16:40:13', '2025-03-17 16:40:13'),
-(9, 'Maruti Dzire', 5, 'View image gallery of Maruti Dzire. Dzire has 63 photos and 360° view. Take a look at the front & rear view, side & top view & all the pictures of Dzire. Also Maruti Dzire is available in 7 colours.', 1500.00, 'Petrol', '2024', 5, '1742453008_Maruti Dzire 2024 1.jpg', '1742453008_Maruti Dzire 2024 2.jpg', '1742453008_Maruti Dzire 2024 3.jpg', '1742453008_Maruti Dzire 2024 4.jpeg', '1742453008_Maruti Dzire 2024 5.jpeg', '1742453008_Maruti Dzire 2024 6.jpg', 1, 1, 1, 0, 1, 1, '1', 1, 0, 0, 1, 0, '2025-03-20 06:43:28', '2025-03-20 06:43:28');
+(1, 'Honda City', 2, 'The Honda City has 1 Petrol Engine on offer. The Petrol engine is 1498 cc . It is available with Manual & Automatic transmission.Depending upon the variant and fuel type the City has a mileage of 17.8 to 18.4 kmpl. The City is a 5 seater 4 cylinder car and has length of 4583 mm, width of 1748 mm and a wheelbase of 2600 mm.', 1200.00, 'Petrol', '2024', 5, '1742211677_Honda City 2024 1.jpg', '1742211677_Honda City 2024 2.jpg', '1742211677_Honda City 2024 3.jpg', '1742211677_Honda City 2024 4.jpeg', '1742211677_Honda City 2024 5.jpeg', '1742211677_Honda City 2024 6.jpg', 1, 1, 1, 0, 1, 1, '1', 1, 0, 0, 1, 1, '2025-03-17 06:11:17', '2025-03-17 06:11:17'),
+(2, 'Honda Amaze', 2, 'The Honda Amaze has 1 Petrol Engine on offer. The Petrol engine is 1199 cc . It is available with Manual & Automatic transmission.Depending upon the variant and fuel type the Amaze has a mileage of 18.65 to 19.46 kmpl & Ground clearance of Amaze is 172 mm. The Amaze is a 5 seater 4 cylinder car and has length of 3995 mm, width of 1733 mm and a wheelbase of 2470 mm.', 1100.00, 'Diesel', '2024', 5, '1742213344_Honda Amaze 2024 1.jpg', '1742213344_Honda Amaze 2024 2.jpg', '1742213344_Honda Amaze 2024 3.jpg', '1742213344_Honda Amaze 2024 4.jpeg', '1742213344_Honda Amaze 2024 5.jpeg', '1742213344_Honda Amaze 2024 6.jpg', 1, 1, 1, 0, 1, 1, '1', 1, 0, 0, 1, 1, '2025-03-17 06:39:04', '2025-03-17 06:39:48'),
+(3, 'Toyota Innova Crysta', 3, 'The Toyota Innova Crysta has 1 Diesel Engine on offer. The Diesel engine is 2393 cc . It is available with Manual transmission.Depending upon the variant and fuel type the Innova Crysta has a mileage of 9 kmpl. The Innova Crysta is a 7 seater 4 cylinder car and has length of 4735 mm, width of 1830 mm and a wheelbase of 2750 mm.', 1800.00, 'Diesel', '2024', 7, '1742213540_Toyota Innova Crysta 2024 1.jpg', '1742213540_Toyota Innova Crysta 2024 2.jpg', '1742213540_Toyota Innova Crysta 2024 3.jpg', '1742213540_Toyota Innova Crysta 2024 4.jpeg', '1742213540_Toyota Innova Crysta 2024 5.jpeg', '1742213540_Toyota Innova Crysta 2024 6.jpg', 1, 1, 1, 1, 1, 1, '1', 1, 1, 1, 1, 1, '2025-03-17 06:42:20', '2025-03-17 11:10:46'),
+(4, 'Hyundai Verna', 4, 'The Hyundai Verna has 2 Petrol Engine on offer. The Petrol engine is 1497 cc and 1482 cc . It is available with Manual & Automatic transmission.Depending upon the variant and fuel type the Verna has a mileage of 18.6 to 20.6 kmpl. The Verna is a 5 seater 4 cylinder car and has length of 4535 mm, width of 1765 mm and a wheelbase of 2670 mm.', 1300.00, 'Petrol', '2024', 5, '1742213764_Hyundai Verna 2024 1.jpg', '1742213764_Hyundai Verna 2024 2.jpg', '1742213764_Hyundai Verna 2024 3.jpg', '1742213764_Hyundai Verna 2024 4.jpeg', '1742213764_Hyundai Verna 2024 5.jpeg', '1742213764_Hyundai Verna 2024 6.jpg', 1, 1, 1, 0, 1, 1, '1', 1, 0, 0, 1, 1, '2025-03-17 06:46:04', '2025-03-17 06:46:04'),
+(5, 'Hyundai i20', 4, 'The Hyundai i20 has 1 Petrol Engine on offer. The Petrol engine is 1197 cc . It is available with Automatic & Manual transmission.Depending upon the variant and fuel type the i20 has a mileage of 16 to 20 kmpl. The i20 is a 5 seater 4 cylinder car and has length of 3995 mm, width of 1775 mm and a wheelbase of 2580 mm.', 1000.00, 'Petrol', '2024', 5, '1742213899_Hyundai I20 2024 1.jpg', '1742213899_Hyundai I20 2024 2.jpg', '1742213899_Hyundai I20 2024 3.jpg', '1742213899_Hyundai I20 2024 4.jpeg', '1742213899_Hyundai I20 2024 5.jpeg', '1742213899_Hyundai I20 2024 6.jpg', 1, 1, 1, 0, 1, 1, '1', 1, 0, 0, 0, 1, '2025-03-17 06:48:19', '2025-03-17 06:48:19'),
+(6, 'Maruti Wagon R', 5, 'The Maruti Wagon R has 2 Petrol Engine and 1 CNG Engine on offer. The Petrol engine is 998 cc and 1197 cc while the CNG engine is 998 cc . It is available with Manual & Automatic transmission.Depending upon the variant and fuel type the Wagon R has a mileage of 23.56 to 25.19 kmpl. The Wagon R is a 5 seater 4 cylinder car and has length of 3655 mm, width of 1620 mm and a wheelbase of 2435 mm.', 700.00, 'CNG', '2024', 5, '1742214012_Maruti Wagon R 2024 1.jpg', '1742214012_Maruti Wagon R 2024 2.jpg', '1742214012_Maruti Wagon R 2024 3.jpg', '1742214012_Maruti Wagon R 2024 4.jpeg', '1742214012_Maruti Wagon R 2024 5.jpeg', '1742214012_Maruti Wagon R 2024 6.jpg', 1, 1, 1, 0, 1, 1, '1', 1, 0, 0, 0, 1, '2025-03-17 06:50:12', '2025-03-17 06:50:12'),
+(7, 'Tata Nexon', 1, 'The Tata Nexon has 1 Diesel Engine, 1 Petrol Engine and 1 CNG Engine on offer. The Diesel engine is 1497 cc, the Petrol engine is 1199 cc while the CNG engine is 1199 cc . It is available with Manual & Automatic transmission.Depending upon the variant and fuel type the Nexon has a mileage of 17.01 to 24.08 kmpl & Ground clearance of Nexon is 208 mm. The Nexon is a 5 seater 4 cylinder car and has length of 3995 mm, width of 1804 mm and a wheelbase of 2498 mm.', 1400.00, 'Diesel', '2024', 5, '1742229466_Tata Nexon 2024 1.jpg', '1742229466_Tata Nexon 2024 2.jpg', '1742229466_Tata Nexon 2024 3.jpg', '1742229466_Tata Nexon 2024 4.jpeg', '1742229466_Tata Nexon 2024 5.jpeg', '1742229466_Tata Nexon 2024 6.jpg', 1, 1, 0, 0, 1, 1, '1', 1, 0, 0, 1, 1, '2025-03-17 11:07:46', '2025-03-17 11:10:27'),
+(8, 'Tata Curvv', 1, 'The Tata Curvv has 1 Diesel Engine and 1 Petrol Engine on offer. The Diesel engine is 1497 cc while the Petrol engine is 1199 cc . It is available with Manual & Automatic transmission.Depending upon the variant and fuel type the Curvv has a mileage of 11 to 15 kmpl & Ground clearance of Curvv is 208 mm. The Curvv is a 5 seater 4 cylinder car and has length of 4308 mm, width of 1810 mm and a wheelbase of 2560 mm.', 1600.00, 'Diesel', '2025', 5, '1742229613_Tata Curvv 2024 1.jpg', '1742229613_Tata Curvv 2024 2.jpg', '1742229613_Tata Curvv 2024 3.jpg', '1742229613_Tata Curvv 2024 4.jpeg', '1742229613_Tata Curvv 2024 5.jpeg', '1742229613_Tata Curvv 2024 6.jpg', 1, 1, 1, 0, 1, 1, '1', 1, 0, 0, 1, 1, '2025-03-17 11:10:13', '2025-03-17 11:10:13'),
+(9, 'Maruti Dzire', 5, 'View image gallery of Maruti Dzire. Dzire has 63 photos and 360° view. Take a look at the front & rear view, side & top view & all the pictures of Dzire. Also Maruti Dzire is available in 7 colours.', 1500.00, 'Petrol', '2024', 5, '1742453008_Maruti Dzire 2024 1.jpg', '1742453008_Maruti Dzire 2024 2.jpg', '1742453008_Maruti Dzire 2024 3.jpg', '1742453008_Maruti Dzire 2024 4.jpeg', '1742453008_Maruti Dzire 2024 5.jpeg', '1742453008_Maruti Dzire 2024 6.jpg', 1, 1, 1, 0, 1, 1, '1', 1, 0, 0, 1, 0, '2025-03-20 01:13:28', '2025-03-20 01:13:28');
 
 --
 -- Indexes for dumped tables

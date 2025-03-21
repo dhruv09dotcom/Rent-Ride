@@ -17,12 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($user) {
             $token = bin2hex(random_bytes(50)); // Generate secure token
-            $expiry = date("Y-m-d H:i:s", strtotime("+30 minutes"));// Token expiry
 
-            // Store token in the database
-            $updateStmt = $dbh->prepare("UPDATE users SET reset_token = :token, token_expiry = :expiry WHERE email = :email");
+            // Store token in the database (without expiry)
+            $updateStmt = $dbh->prepare("UPDATE users SET reset_token = :token WHERE email = :email");
             $updateStmt->bindParam(":token", $token, PDO::PARAM_STR);
-            $updateStmt->bindParam(":expiry", $expiry, PDO::PARAM_STR);
             $updateStmt->bindParam(":email", $email, PDO::PARAM_STR);
             $updateStmt->execute();
 
