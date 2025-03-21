@@ -128,7 +128,7 @@ $bookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <?php if (count($bookings) > 0): ?>
                     <?php foreach ($bookings as $booking): ?>
                         <p class="booking-number">
-                            Booking No: <span><?php echo htmlspecialchars($booking['booking_number']); ?></span>
+                            Booking No: <span>#<?php echo htmlspecialchars($booking['booking_number']); ?></span>
                         </p>
                         <div class="booking-details">
                             <img src="admin/uploads/<?php echo htmlspecialchars($booking['car_image']); ?>" class="car-image" alt="Car Image">
@@ -142,46 +142,16 @@ $bookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             </div>
                         </div>
                         
-                        <div id="invoice-<?php echo $booking['booking_id']; ?>">
-                            <h3 class="invoice-heading">Invoice</h3>
-                            <table class="invoice-table">
-                                <thead>
-                                    <tr>
-                                        <th>Car Name</th>
-                                        <th>From Date</th>
-                                        <th>To Date</th>
-                                        <th>Total Days</th>
-                                        <th>Price Per Day</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><?php echo htmlspecialchars($booking['vehicle_title']); ?></td>
-                                        <td><?php echo htmlspecialchars($booking['from_date']); ?></td>
-                                        <td><?php echo htmlspecialchars($booking['to_date']); ?></td>
-                                        <td><?php 
-                                            $date1 = new DateTime($booking['from_date']);
-                                            $date2 = new DateTime($booking['to_date']);
-                                            $interval = $date1->diff($date2);
-                                            echo $interval->days;
-                                        ?></td>
-                                        <td>₹<?php echo htmlspecialchars($booking['price_per_day']); ?></td>
-                                    </tr>
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <td colspan="4" class="MB"><b>Grand Total</b></td>
-                                        <td><b>₹<?php echo $interval->days * $booking['price_per_day']; ?></b></td>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                        </div>
-                        
                         <div class="button-container">
                             <form method="POST" action="my-bookings.php">
                                 <input type="hidden" name="booking_id" value="<?php echo $booking['booking_id']; ?>">
                                 <button type="submit" name="cancel_booking" class="cancel-button">Cancel Booking</button>
-                                <button type="button" class="print-button" onclick="printInvoice(<?php echo $booking['booking_id']; ?>)">Print Invoice</button>
+                                <button type="button" class="print-button" onclick="redirectToInvoice(<?php echo $booking['booking_id']; ?>)">View Invoice</button>
+                                <script>
+                                    function redirectToInvoice(bookingId) {
+                                        window.location.href = 'invoice.php?booking_id=' + bookingId;
+                                    }
+                                </script>
                             </form>
                         </div>
                     <?php endforeach; ?>
@@ -190,25 +160,6 @@ $bookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <?php endif; ?>
             </div>
         </section>
-        <script>
-            function printInvoice(bookingId) {
-                var invoice = document.getElementById("invoice-" + bookingId);
-                if (invoice) {
-                    var printContent = invoice.innerHTML;
-                    var originalContent = document.body.innerHTML;
-
-                    // Replace the body content with invoice content
-                    document.body.innerHTML = printContent;
-                    window.print();
-
-                    // Restore original page content after printing
-                    document.body.innerHTML = originalContent;
-                    location.reload(); // Reload the page to restore events
-                } else {
-                    alert("Invoice not found.");
-                }
-            }
-        </script>
         <!-- Include Footer -->
         <?php include 'include/footer.php'; ?>
     </body>

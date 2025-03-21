@@ -1707,53 +1707,87 @@ footer {
     text-align: center;
     width: 120px;
 }
-/* Invoice Styling */
-.invoice-container {
+/* Invoice Container */
+.invoice-box {
     width: 80%;
-    max-width: 600px;
+    max-width: 650px;
     margin: 20px auto;
     padding: 20px;
     border: 2px solid #333;
     border-radius: 8px;
     background: #fff;
     font-family: Arial, sans-serif;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.invoice-header {
+/* Invoice Header */
+.invoice-box h2 {
     text-align: center;
-    margin-bottom: 10px;
-}
-
-.invoice-header h2 {
     color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
 }
 
-.admin-details, .user-details, .vehicle-details {
-    padding: 10px 0;
-}
-
-.invoice-car-image {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-}
-
-.invoice-table {
+/* Info Table (Customer Details) */
+.info-table, .details-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
-.invoice-table th, .invoice-table td {
+.info-table th, .info-table td,
+.details-table th, .details-table td {
     border: 1px solid #ddd;
     padding: 10px;
-    text-align: center;
+    text-align: left;
 }
 
-.invoice-table th {
+.info-table th, .details-table th {
     background: #f4f4f4;
+    font-weight: bold;
+}
+
+/* Vehicle Details Header */
+.invoice-box h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #444;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+/* Print Button */
+.print-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    font-size: 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.print-button:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .invoice-box {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .info-table th, .info-table td,
+    .details-table th, .details-table td {
+        font-size: 14px;
+        padding: 8px;
+    }
 }
 
 /* ---------- Booking Cancellation Section ---------- */
