@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <!-- Update Password Section -->
         <section class="update-password">
             <div class="update-container">
-                <h2>Change Password</h2>
+                <h2>Update Password</h2>
                 <form action="#" method="POST">
                     <div class="input-group">
                         <label for="current-password">Current Password</label>
