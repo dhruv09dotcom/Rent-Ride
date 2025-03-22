@@ -188,7 +188,7 @@ CREATE TABLE `vehicles` (
   `power_door_locks` tinyint(4) DEFAULT NULL,
   `driver_airbag` tinyint(4) DEFAULT NULL,
   `central_locking` tinyint(4) DEFAULT NULL,
-  `antilock_braking_system` varchar(255) DEFAULT NULL,
+  `antilock_braking_system` tinyint(4) DEFAULT NULL,
   `passenger_airbag` tinyint(4) DEFAULT NULL,
   `crash_sensor` tinyint(4) DEFAULT NULL,
   `brake_assist` tinyint(4) DEFAULT NULL,
