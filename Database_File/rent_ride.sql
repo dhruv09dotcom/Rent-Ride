@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2025 at 05:53 PM
+-- Generation Time: Mar 21, 2025 at 06:10 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`, `updated_at`) VALUES
-(1, 'Admin', 'admin@123', '2025-03-18 03:32:10');
+(1, 'Admin', 'admin@123', '2025-03-21 17:08:18');
 
 -- --------------------------------------------------------
 
@@ -59,6 +59,14 @@ CREATE TABLE `bookings` (
   `status` enum('new','confirmed','cancelled') DEFAULT 'new',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `bookings`
+--
+
+INSERT INTO `bookings` (`id`, `booking_number`, `user_id`, `email`, `vehicle_id`, `from_date`, `to_date`, `message`, `status`, `created_at`) VALUES
+(1, '134542154', 1, 'rathvadhruv3@gmail.com', 8, '2025-03-21', '2025-03-23', 'Booking for business trip!!', 'confirmed', '2025-03-21 17:05:04'),
+(2, '157148037', 1, 'rathvadhruv3@gmail.com', 6, '2025-03-21', '2025-03-22', '', 'cancelled', '2025-03-21 17:05:53');
 
 -- --------------------------------------------------------
 
@@ -124,7 +132,7 @@ CREATE TABLE `contact_queries` (
 --
 
 INSERT INTO `contact_queries` (`id`, `full_name`, `email`, `message`, `created_at`, `status`) VALUES
-(1, 'Test Project', 'test@gmail.com', 'Hello Admin !', '2025-03-19 04:03:12', 'Read');
+(1, 'Test Project', 'rathvadhruv3@gmail.com', 'Hello Admin!', '2025-03-21 17:03:03', 'Read');
 
 -- --------------------------------------------------------
 
@@ -143,16 +151,15 @@ CREATE TABLE `users` (
   `state` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `reset_token` varchar(100) DEFAULT NULL,
-  `token_expiry` datetime DEFAULT NULL
+  `reset_token` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `phone`, `address`, `pincode`, `state`, `password`, `created_at`, `reset_token`, `token_expiry`) VALUES
-(1, 'Test', 'Project', 'rathvadhruv3@gmail.com', '98741 23650', 'Flat No. 603, 6th Floor, Tower A, Courtyard Trilogy, Bhayli, Vadodara.', '391410', 'Gujarat', 'test@123', '2025-03-21 16:49:48', 'efd5556ef5723087224a9ef61dc5014702085ddf62cb61bc8dbfd1b5bd367461c9c7337f23381cb36e010c9cee1ae8408750', '2025-03-21 18:22:02');
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `phone`, `address`, `pincode`, `state`, `password`, `created_at`, `reset_token`) VALUES
+(1, 'Test', 'Project', 'rathvadhruv3@gmail.com', '98741 23650', 'Flat No. 603, 6th Floor, Tower A, Courtyard Trilogy, Bhayli, Vadodara.', '391410', 'Gujarat', 'test@123', '2025-03-21 16:49:48', NULL);
 
 -- --------------------------------------------------------
 
